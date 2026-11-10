@@ -1,0 +1,19 @@
+# Dependências e build
+node_modules/
+dist/
+
+# Site antigo (mantido localmente, fora do versionamento)
+_legado/
+
+# Fotos originais para o pipeline de imagens (pesadas)
+_fotos/
+
+# Ambiente e ferramentas
+.env
+.env.*
+!.env.example
+.vercel/
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

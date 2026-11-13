@@ -1,0 +1,901 @@
+@layer sections {
+  /* Home (spec §7.1). Um bloco por seção, na ordem da página: 0 a 4 aqui; a Task 11 acrescenta de 5 a 10 no fim. */
+
+  /* ───── 0. Intro (ui/intro) ─────
+   * Só existe com html.motion-ok.intro-on, que o script inline do <head> põe na primeira visita da sessão
+   * (.is-leaving a segura enquanto a cortina sobe). Sem JS, com movimento reduzido ou depois do
+   * mecanismo de segurança, ela nunca aparece.
+   */
+  .intro {
+    display: none;
+  }
+
+  .motion-ok.intro-on .intro,
+  .motion-ok .intro.is-leaving {
+    position: fixed;
+    inset: 0;
+    z-index: 8500;
+    display: grid;
+    place-items: center;
+    padding: var(--edge);
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 42%, rgb(227 167 47 / .16), transparent 70%),
+      var(--green-950);
+    color: var(--cream-100);
+  }
+
+  .intro__inner {
+    display: grid;
+    justify-items: center;
+    gap: clamp(16px, 2vw, 24px);
+    text-align: center;
+  }
+
+  .intro__crest {
+    width: clamp(84px, 9vw, 120px);
+    height: auto;
+    filter: drop-shadow(0 18px 40px rgb(0 0 0 / .35));
+  }
+
+  .intro__name {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: var(--tracking-title);
+    line-height: .95;
+  }
+
+  .intro__count {
+    position: absolute;
+    right: var(--edge);
+    bottom: clamp(20px, 4vw, 48px);
+    color: var(--gold-500);
+    font-size: clamp(3rem, 9vw, 8rem);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.05em;
+    line-height: 1;
+  }
+
+  /* ───── 1. Hero de temas (#inicio, fx/hero-themes) ─────
+   * A cor vem de --hero-color (o data-theme-color do botão ativo, um --theme-*). Sobre ela o texto é
+   * sempre creme cheio: creme translúcido cai abaixo de 4,5:1 no tema Fé. Anel de foco creme (≥ 3:1 nos 4 temas).
+   */
+  .hero-themes {
+    --hero-color: var(--theme-natureza);
+    --text: var(--cream-100);
+    --text-strong: var(--cream-100);
+    --text-muted: var(--cream-100);
+    --accent-text: var(--gold-300);
+    --border: rgb(251 247 238 / .24);
+    --focus-ring: var(--cream-100);
+    position: relative;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-height: 100svh;
+    padding-top: var(--header-h);
+    overflow: hidden;
+    isolation: isolate;
+    background-color: var(--hero-color);
+    color: var(--text);
+  }
+
+  /* Brilho e vinheta por cima da onda de cor, para a troca não apagar a profundidade. */
+  .hero-themes::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 50% at 50% 45%, rgb(255 253 248 / .10), transparent 70%),
+      linear-gradient(180deg, transparent 55%, rgb(10 34 25 / .30));
+  }
+
+  .hero-themes__wave {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--wave-color, var(--hero-color));
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+    pointer-events: none;
+  }
+
+  /* Palavra e palco na mesma célula: a foto em arco fica por cima, no centro. */
+  .hero-themes__scene {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: center;
+    padding-block: clamp(12px, 2vw, 24px);
+  }
+
+  .hero-themes__scene > * {
+    grid-area: 1 / 1;
+  }
+
+  /* O font-size é o teto; fx/hero-themes encolhe cada tema até caber em 92% da largura (fitFontSize).
+   * A altura fixa (.86em do teto) impede que o palco pule quando a palavra troca de tamanho. */
+  .hero-themes__word {
+    position: relative;
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: .86em;
+    color: var(--cream-100);
+    font-size: min(58svh, 40vw);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: .82;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Sem JS a palavra não é ajustada: um tamanho em que "Natureza" cabe. */
+  html:not(.js) .hero-themes__word {
+    font-size: min(17vw, 58svh);
+  }
+
+  .hero-themes__line {
+    grid-area: 1 / 1;
+    display: block;
+    width: max-content;
+  }
+
+  .hero-themes__char {
+    display: inline-block;
+    white-space: pre;
+  }
+
+  /* Palavra curta no desktop (decisão do "Fé", Task 13b; o fx/hero-themes decide e dá o tamanho): as letras
+   * vão para as laterais, nas faixas livres de fora das órbitas, em vez de sumirem atrás do arco. */
+  .hero-themes__line--flank {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Com o tracking negativo, o espaço de "Rio das Velhas" quase some: largura própria. */
+  .hero-themes__char--space {
+    width: .28em;
+  }
+
+  .hero-themes__stage {
+    position: relative;
+    z-index: 1;
+    width: min(78vw, 420px, calc((100svh - 300px) * .75));
+  }
+
+  .hero-themes__arch {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border: 6px solid var(--cream-50);
+    background: rgb(10 34 25 / .35);
+    box-shadow: 0 40px 90px rgb(10 34 25 / .35);
+  }
+
+  .hero-themes__photo {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Chips de foto em órbita, na ordem 1 a 4 (a mesma de data-theme-orbits). Os desfocados (1 e 3) ficam
+   * atrás do arco (z-index -1 dentro do palco, que é um contexto de empilhamento); os nítidos, na frente. */
+  .hero-themes__orbit {
+    --w: 120px;
+    position: absolute;
+    z-index: 2;
+    width: var(--w);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 3px solid var(--cream-50);
+    border-radius: var(--r-md);
+    background: rgb(10 34 25 / .35);
+    box-shadow: 0 18px 40px rgb(10 34 25 / .30);
+    pointer-events: none;
+  }
+
+  .hero-themes__orbit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-themes__orbit--1 {
+    --w: clamp(84px, 12vw, 180px);
+    z-index: -1;
+    top: 4%;
+    right: calc(100% + clamp(16px, 4vw, 72px));
+    filter: blur(2px);
+    transform: rotate(-8deg);
+  }
+
+  .hero-themes__orbit--2 {
+    --w: clamp(72px, 9vw, 132px);
+    top: -6%;
+    left: calc(100% + clamp(8px, 3vw, 56px));
+    transform: rotate(9deg);
+  }
+
+  .hero-themes__orbit--3 {
+    --w: clamp(76px, 10vw, 150px);
+    z-index: -1;
+    bottom: -2%;
+    right: calc(100% + clamp(8px, 2vw, 40px));
+    filter: blur(2px);
+    transform: rotate(7deg);
+  }
+
+  .hero-themes__orbit--4 {
+    --w: clamp(88px, 13vw, 190px);
+    bottom: 0%;
+    left: calc(100% + clamp(16px, 5vw, 88px));
+    transform: rotate(-6deg);
+  }
+
+  /* Flutuar usa a propriedade translate, que não briga com o transform da GSAP (entrada e rotação). */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-themes__orbit {
+      animation: hero-orbit-float 5s ease-in-out infinite;
+    }
+
+    .hero-themes__orbit--2 { animation-duration: 4.2s; animation-delay: -1.4s; }
+    .hero-themes__orbit--3 { animation-duration: 5.6s; animation-delay: -2.2s; }
+    .hero-themes__orbit--4 { animation-duration: 4.6s; animation-delay: -.8s; }
+  }
+
+  @keyframes hero-orbit-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -14px; }
+  }
+
+  /* Estreito: o arco cobriria a palavra toda; ela sobe para cima do arco e as órbitas encostam nos cantos. */
+  @media (max-width: 899px) {
+    .hero-themes__scene {
+      grid-template-rows: auto auto;
+      align-content: center;
+    }
+
+    .hero-themes__word {
+      grid-area: 1 / 1;
+      align-items: end;
+      font-size: min(15svh, 34vw);
+    }
+
+    .hero-themes__stage {
+      grid-area: 2 / 1;
+      width: min(78vw, 420px, calc((100svh - 420px) * .75));
+      margin-top: clamp(8px, 2svh, 20px);
+    }
+
+    .hero-themes__orbit--1 { --w: clamp(64px, 19vw, 120px); top: 10%; right: auto; left: -15%; }
+    .hero-themes__orbit--2 { --w: clamp(56px, 16vw, 100px); top: -5%; left: auto; right: -12%; }
+    .hero-themes__orbit--3 { --w: clamp(60px, 17vw, 110px); bottom: 6%; right: auto; left: -12%; }
+    .hero-themes__orbit--4 { --w: clamp(64px, 19vw, 120px); bottom: 18%; left: auto; right: -15%; }
+  }
+
+  /* Barra de baixo: temas à esquerda, botão no centro e "Role" à direita (uma linha a partir de 1360 px, onde os 4 temas cabem). */
+  .hero-themes__bar {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "tabs tabs"
+      "cta scroll";
+    align-items: center;
+    gap: 16px 24px;
+    padding-bottom: clamp(20px, 3vw, 40px);
+  }
+
+  /* Os botões só fazem algo com JS. */
+  .hero-themes__tabs {
+    grid-area: tabs;
+    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 20px;
+  }
+
+  .js .hero-themes__tabs {
+    display: grid;
+  }
+
+  @media (min-width: 600px) {
+    .hero-themes__tabs {
+      grid-template-columns: repeat(4, auto);
+      justify-content: start;
+      gap: 0 clamp(20px, 2.4vw, 32px);
+    }
+  }
+
+  .hero-themes__tab {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-height: 44px;
+    padding-block: 12px 14px;
+    color: var(--cream-100);
+    font-size: .8125rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .hero-themes__tab-index {
+    font-size: .6875rem;
+    letter-spacing: .2em;
+  }
+
+  /* Trilho e barra de progresso da troca automática (scaleX pela GSAP). Sem troca automática,
+   * a barra do tema ativo fica cheia. */
+  .hero-themes__tab::after,
+  .hero-themes__progress {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+  }
+
+  .hero-themes__tab::after {
+    background: rgb(251 247 238 / .24);
+  }
+
+  .hero-themes__progress {
+    z-index: 1;
+    background: var(--cream-100);
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+
+  .hero-themes__tab[aria-pressed="true"] .hero-themes__progress {
+    transform: scaleX(1);
+  }
+
+  .hero-themes__cta {
+    grid-area: cta;
+    justify-self: start;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Pausa da troca de temas (criada por fx/hero-themes.js; 44 px de alvo, anel de foco = --focus-ring do hero). */
+  .hero-themes__pause {
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    inline-size: 44px;
+    block-size: 44px;
+    border: 1px solid rgb(251 247 238 / .6);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--cream-100);
+    cursor: pointer;
+  }
+
+  .hero-themes__pause[hidden] { display: none; }
+
+  .hero-themes__pause-icon {
+    inline-size: 18px;
+    block-size: 18px;
+    fill: currentColor;
+  }
+
+  .hero-themes__pause .is-play,
+  .hero-themes__pause[aria-pressed="true"] .is-pause { display: none; }
+  .hero-themes__pause[aria-pressed="true"] .is-play { display: inline; }
+
+  .hero-themes__cta-icon {
+    rotate: 90deg;
+  }
+
+  .hero-themes__scroll {
+    grid-area: scroll;
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .hero-themes__scroll::after {
+    content: "";
+    width: 1px;
+    height: 40px;
+    background:
+      linear-gradient(var(--cream-100), var(--cream-100)) no-repeat 0 -16px / 100% 16px,
+      rgb(251 247 238 / .3);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-themes__scroll::after {
+      animation: hero-scroll 2.2s var(--ease-out) infinite;
+    }
+  }
+
+  @keyframes hero-scroll {
+    to { background-position: 0 40px, 0 0; }
+  }
+
+  @media (min-width: 1360px) {
+    .hero-themes__bar {
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      grid-template-areas: "tabs cta scroll";
+      align-items: end;
+    }
+
+    .hero-themes__cta {
+      justify-self: center;
+    }
+  }
+
+  /* Até o fx/hero-themes assumir (.is-ready), palavra, órbitas, barra e header ficam ocultos para a entrada
+   * não piscar. Se o módulo não carregar, a animação hero-failsafe os mostra em 4 s (o boot também tira
+   * motion-ok se o JS todo falhar). Com .is-ready a regra deixa de valer e a GSAP cuida do estado inicial. */
+  .motion-ok .hero-themes:not(.is-ready) :is(.hero-themes__word, .hero-themes__orbit, .hero-themes__bar),
+  .motion-ok:has(.hero-themes:not(.is-ready)) .site-header {
+    opacity: 0;
+    animation: hero-failsafe 0s 4s forwards;
+  }
+
+  /* A foto do arco é o LCP da Home (Task 13b): nunca fica oculta. Ela pinta no primeiro quadro (por baixo da
+   * intro, na primeira visita) já na pose de início da entrada, igual ao fromTo da GSAP, que só a sobe. */
+  .motion-ok .hero-themes:not(.is-ready) .hero-themes__arch {
+    transform: translateY(80px) scale(.9);
+    animation: hero-arch-failsafe 0s 4s forwards;
+  }
+
+  /* Durante a intro (que cobre a tela) as órbitas nem são baixadas: elas entram quando a cortina sobe. */
+  .motion-ok.intro-on .hero-themes__orbit {
+    display: none;
+  }
+
+  /* Também durante a intro (Ruling 29): o itálico de destaque (Fraunces, 46 KB) só aparece em títulos abaixo
+   * da dobra; ele baixa quando a cortina sobe, e o main.js refaz o ScrollTrigger quando a fonte chega. */
+  .motion-ok.intro-on em.accent {
+    font-family: inherit;
+  }
+
+  @keyframes hero-failsafe {
+    to { opacity: 1; }
+  }
+
+  @keyframes hero-arch-failsafe {
+    to { transform: none; }
+  }
+
+  /* ───── 2. Faixa do brasão ───── */
+  .brand-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px 28px;
+    padding: clamp(28px, 4vw, 40px) var(--edge);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--cream-50) 0%, var(--cream-100) 50%, var(--cream-200) 100%);
+    box-shadow: 0 12px 40px rgb(18 63 46 / .06);
+    text-align: center;
+  }
+
+  .brand-bar__crest {
+    flex: none;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+
+  .brand-bar__text {
+    max-width: 46ch;
+    color: var(--text-muted);
+    font-size: clamp(.9375rem, 1.3vw, 1.0625rem);
+    line-height: 1.55;
+  }
+
+  .brand-bar__text strong {
+    color: var(--text-strong);
+  }
+
+  @media (min-width: 900px) {
+    .brand-bar__text {
+      text-align: left;
+    }
+  }
+
+  /* ───── 3. A cidade (#a-cidade) ───── */
+  .city {
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse 55% 45% at 85% 35%, rgb(227 167 47 / .10), transparent 70%),
+      linear-gradient(180deg, var(--cream-100) 0%, var(--cream-50) 55%, var(--cream-100) 100%);
+  }
+
+  .city__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-items: center;
+    gap: clamp(56px, 7vw, 96px);
+  }
+
+  .city__copy {
+    display: grid;
+    justify-items: start;
+    gap: 22px;
+  }
+
+  .city__title {
+    max-width: 12ch;
+  }
+
+  .city__lead {
+    max-width: 36em;
+  }
+
+  .city__pillars {
+    width: 100%;
+    max-width: 580px;
+    margin-top: 10px;
+  }
+
+  .city__actions {
+    margin-top: 28px;
+  }
+
+  /* Anéis tracejados girando, foto da Matriz em arco (parallax pelo fx/parallax), brilho passando e brasão flutuando. */
+  .city__visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-self: center;
+    width: min(100%, 540px);
+    aspect-ratio: 1;
+  }
+
+  .city__rings {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+
+  .city__ring {
+    grid-area: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1.5px dashed rgb(18 63 46 / .24);
+    border-radius: 50%;
+  }
+
+  .city__ring:nth-child(2) {
+    width: 80%;
+    border-color: rgb(138 98 16 / .32);
+  }
+
+  .city__ring:nth-child(3) {
+    width: 60%;
+    border-color: rgb(18 63 46 / .14);
+  }
+
+  .city__arch {
+    position: relative;
+    z-index: 1;
+    width: 54%;
+    aspect-ratio: 3 / 4;
+    border: 6px solid var(--cream-50);
+    box-shadow: 0 30px 70px rgb(18 63 46 / .22), var(--glow-gold);
+  }
+
+  .city__shine {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(105deg, transparent 35%, rgb(255 253 248 / .45) 50%, transparent 65%);
+    transform: translateX(-130%);
+  }
+
+  .city__crest {
+    position: absolute;
+    top: 6%;
+    right: 8%;
+    z-index: 2;
+    width: clamp(76px, 9vw, 120px);
+    height: auto;
+    filter: drop-shadow(0 14px 28px rgb(18 63 46 / .22));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .city__ring {
+      animation: city-spin 70s linear infinite;
+    }
+
+    .city__ring:nth-child(2) {
+      animation-duration: 50s;
+      animation-direction: reverse;
+    }
+
+    .city__ring:nth-child(3) {
+      animation-duration: 90s;
+    }
+
+    .city__shine {
+      animation: city-shine 6s ease-in-out infinite;
+    }
+
+    .city__crest {
+      animation: city-float 6s ease-in-out infinite;
+    }
+  }
+
+  @keyframes city-spin {
+    to { rotate: 360deg; }
+  }
+
+  @keyframes city-shine {
+    0%, 55% { transform: translateX(-130%); }
+    100% { transform: translateX(130%); }
+  }
+
+  @keyframes city-float {
+    0%, 100% { translate: 0 0; rotate: -3deg; }
+    50% { translate: 0 -12px; rotate: 3deg; }
+  }
+
+  @media (min-width: 1024px) {
+    .city__inner {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    }
+  }
+
+  /* ───── 4. Vídeo (#video, fx/video-expand + ui/video) ─────
+   * O vídeo é vertical (public/video/video.json): ele fica inteiro no centro de um palco escuro, sobre uma
+   * cópia desfocada do pôster, e quem cresce de 72% para a largura toda é a moldura (clip-path, com pin).
+   * O vídeo nunca é cortado no estado final: object-fit: contain e proporção de video.json (a marca
+   * d'água de atribuição continua visível). Sem JS ou com movimento reduzido, a moldura fica aberta.
+   */
+  .video-section {
+    padding-bottom: 0;
+  }
+
+  .video-section__head {
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+
+  .video-section__head .section-title {
+    max-width: 14ch;
+  }
+
+  .video-section__stage {
+    height: 100svh;
+  }
+
+  .video-section__frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--green-950);
+  }
+
+  .video-section__backdrop {
+    position: absolute;
+    inset: -60px;
+    z-index: -1;
+    background: url("/video/santo-hipolito-poster.webp") center / cover no-repeat;
+    filter: blur(40px) saturate(1.15) brightness(.5);
+  }
+
+  .video-section__player {
+    width: min(100% - 32px, 84svh * 576 / 1024);
+    aspect-ratio: 576 / 1024;
+    box-shadow: 0 40px 100px rgb(0 0 0 / .45);
+  }
+
+  .video-section__player video {
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
+
+/* === Home parte 2 === */
+/* Seções 5 a 9 da Home (spec §7.1): explore, pontos, números, história e eventos. O CTA é o partial. */
+@layer sections {
+  /* ───── 5. Explore (#explore): bento das 4 categorias (a grade 2×2 / 2 / 1 / 1 vem de components.css) ───── */
+  .explore {
+    background:
+      radial-gradient(ellipse 60% 40% at 90% 0%, rgb(227 167 47 / .08), transparent 70%),
+      linear-gradient(180deg, var(--cream-100) 0%, var(--cream-50) 100%);
+  }
+
+  /* ───── 6. Pontos turísticos (#pontos, fx/horizontal) ─────
+   * Padrão (celular, tablet, movimento reduzido, sem JS): rolagem nativa dentro do próprio
+   * viewport, com scroll-snap; a página nunca rola na horizontal.
+   * .is-pinned (fx/horizontal, ≥ 1024 px e movimento permitido): a seção fica fixa e o track anda
+   * em x. O track tem padding-left = --edge e nenhum à direita, que é o "+ edge" do travelDistance.
+   */
+  .places-rail {
+    background:
+      radial-gradient(ellipse 55% 45% at 12% 100%, rgb(227 167 47 / .10), transparent 70%),
+      linear-gradient(180deg, var(--cream-50) 0%, var(--cream-200) 100%);
+  }
+
+  .places-rail__viewport {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--edge);
+    scrollbar-width: thin;
+    scrollbar-color: var(--green-800) transparent;
+  }
+
+  .places-rail__track {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(16px, 2vw, 28px);
+    width: max-content;
+    padding: 8px var(--edge) 24px;
+  }
+
+  /* Largura igual ao sizes das <img> (index.html): min(76vw, 340px) e, no desktop, até 400px. */
+  .places-rail__track > .card-place {
+    flex: none;
+    width: min(76vw, 340px);
+    scroll-snap-align: start;
+  }
+
+  /* "Ver todos" com a altura da foto dos outros cards, não do card inteiro. */
+  .places-rail__track > .card-place--more {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
+  }
+
+  /* No desktop a largura também respeita a altura da tela: a seção fixada cabe inteira em 100svh. */
+  @media (min-width: 1024px) {
+    .places-rail__track > .card-place {
+      width: clamp(240px, min(26vw, calc((100svh - 460px) * .8)), 400px);
+    }
+  }
+
+  .places-rail.is-pinned {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    padding-block: calc(var(--header-h) + 8px) 32px;
+  }
+
+  .places-rail.is-pinned .section-header {
+    margin-bottom: clamp(24px, 3vw, 40px);
+  }
+
+  /* clip (e não hidden): nada rola este viewport por baixo do transform, nem o foco. */
+  .places-rail.is-pinned .places-rail__viewport {
+    overflow: clip;
+    scroll-snap-type: none;
+  }
+
+  .places-rail.is-pinned .places-rail__track {
+    padding-inline-end: 0;
+    will-change: transform;
+  }
+
+  /* ───── 7. Em números (#numeros): faixa escura sobre home/numeros-fundo ─────
+   * .section--dark dá o texto creme, o ouro 500 e o anel de foco ouro 500 (Rulings 11/12).
+   */
+  .numbers {
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--green-950);
+  }
+
+  .numbers__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .numbers__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.85);
+  }
+
+  /* Véu: o mínimo de .86 garante 4,5:1 para o creme, o ouro 500 e o texto suave até sobre um pixel branco (home.test). */
+  .numbers__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(10 34 25 / .94) 0%, rgb(10 34 25 / .86) 45%, rgb(10 34 25 / .92) 100%);
+  }
+
+  .numbers .stat {
+    border-left-color: var(--border);
+  }
+
+  @media (min-width: 1024px) {
+    .numbers .stats {
+      margin-top: clamp(16px, 2vw, 32px);
+    }
+  }
+
+  /* ───── 8. História (#historia, fx/timeline): título fixo à esquerda e a linha do tempo à direita ───── */
+  .history {
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse 50% 40% at 8% 18%, rgb(227 167 47 / .10), transparent 70%),
+      var(--cream-100);
+  }
+
+  /* Marca d'água do brasão, onde está registrada a data de instalação (o último marco). */
+  .history::after {
+    content: "";
+    position: absolute;
+    right: -6%;
+    bottom: -4%;
+    z-index: -1;
+    width: min(560px, 80vw);
+    aspect-ratio: 1;
+    background: url("/img/brand/brasao-512.png") no-repeat center / contain;
+    opacity: .06;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1200px) {
+    .history__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      align-items: start;
+      gap: clamp(48px, 6vw, 96px);
+    }
+
+    .history__head {
+      position: sticky;
+      top: calc(var(--header-h) + 40px);
+    }
+  }
+
+  /* Sem JS ou com movimento reduzido (sem html.motion-ok) a linha já vem inteira: os pontos vêm dourados. */
+  html:not(.motion-ok) .history .timeline__item::before {
+    border-color: var(--gold-500);
+    background: var(--gold-500);
+  }
+
+  /* ───── 9. Agenda cultural (#eventos, fx/hover-preview + fx/marquee): lista com prévia no hover e a faixa rolando ───── */
+  .events__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px 48px;
+    margin-bottom: clamp(40px, 6vw, 72px);
+  }
+
+  .events__head .section-header {
+    margin-bottom: 0;
+  }
+
+  .events__marquee {
+    margin-top: clamp(56px, 8vw, 104px);
+  }
+}

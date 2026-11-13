@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <!-- @include head -->
+  <title>Styleguide · Santo Hipólito-MG</title>
+  <meta name="description" content="Página de desenvolvimento com todos os componentes do sistema visual do site de Santo Hipólito, Minas Gerais.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Só para o styleguide (fora do build): molduras e amostras. As fotos vêm de _legado/, que existe só localmente. -->
+  <style>
+    .sg-intro { padding-top: calc(var(--header-h) + clamp(56px, 9vw, 120px)); }
+    .sg-intro h1 { max-width: 12ch; margin-top: 20px; }
+    .sg-intro .lead { margin-top: 28px; }
+    .sg-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; }
+    .sg-nav a { text-decoration: none; }
+    .sg-block { padding-block: clamp(64px, 9vw, 112px); border-top: 1px solid var(--line); }
+    .sg-label { margin: 40px 0 14px; color: var(--text-muted); font-size: .75rem; font-weight: 600; letter-spacing: .14em; line-height: 1.4; text-transform: uppercase; }
+    .sg-label code { font: inherit; color: var(--accent-text); letter-spacing: .04em; text-transform: none; }
+    .sg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; }
+    .sg-pad { padding: clamp(24px, 4vw, 40px); border-radius: var(--r-lg); }
+    .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 12px; }
+    .sg-swatch { overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--cream-50); font-size: .8125rem; line-height: 1.4; }
+    .sg-swatch__chip { display: grid; place-items: center; height: 76px; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; }
+    .sg-swatch__meta { padding: 10px 12px; }
+    .sg-swatch__meta b { display: block; color: var(--ink-900); font-weight: 600; }
+    .sg-swatch__meta span { color: var(--ink-600); }
+    .sg-type { color: var(--text-strong); font-weight: 800; letter-spacing: var(--tracking-title); line-height: 1; }
+    .sg-type-row { display: grid; gap: 6px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+    .sg-theme-word { display: grid; place-items: center; padding-block: .14em .08em; border-radius: var(--r-lg); color: var(--cream-100); font-size: var(--fs-hero); font-weight: 800; letter-spacing: var(--tracking-title); line-height: .82; }
+    .sg-frames { display: grid; gap: 16px; }
+    .sg-frame { position: relative; min-height: 132px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--cream-100); }
+    .sg-frame .site-header { position: absolute; }
+    .sg-frame__under { position: absolute; inset: 0; display: grid; align-content: end; padding: 16px var(--gutter); color: var(--text-muted); font-size: var(--fs-small); }
+    .sg-frame--photo { background: url("/_legado/ponte%20do%20rio/ponte%20so%20rio222.jpg") center 62% / cover; }
+    .sg-frame--theme { background: var(--theme-natureza); }
+    .sg-frame--menu { width: min(100%, 420px); min-height: 700px; }
+    .sg-frame--menu .menu-mobile { position: absolute; display: flex; }
+    .sg-frame--menu .site-nav { display: none; }
+    .sg-frame--menu .site-header__toggle { display: inline-grid; }
+    .sg-cols { display: grid; gap: 32px; }
+    @media (min-width: 900px) { .sg-cols { grid-template-columns: 1fr 1fr; align-items: start; } }
+    .sg-grid-demo > * { padding: 18px; border-radius: var(--r-sm); background: var(--green-100); color: var(--green-800); font-size: var(--fs-small); font-weight: 600; }
+    @media (min-width: 900px) { .sg-grid-demo > :first-child { grid-column: 1 / span 7; } .sg-grid-demo > :last-child { grid-column: 9 / span 4; } }
+    .sg-arch { width: min(100%, 260px); aspect-ratio: 4 / 5; }
+    .sg-icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 112px), 1fr)); gap: 10px; }
+    .sg-icon { display: grid; justify-items: center; gap: 10px; padding: 18px 8px 12px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--cream-50); color: var(--green-800); font-size: .75rem; }
+    .sg-icon svg { width: 28px; height: 28px; }
+    .sg-static { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
+    .sg-static :is(.to-top, .cursor-dot, .cursor-ring) { position: relative; inset: auto; translate: none; }
+    .sg-static .to-top { display: grid; }
+    .sg-static .to-top__progress { stroke-dashoffset: 48; }
+    .sg-lightbox { position: relative; height: 520px; overflow: hidden; border-radius: var(--r-lg); }
+    .sg-lightbox .lightbox { position: absolute; inset: 0; }
+    .sg-lightbox .lightbox__img { max-height: 300px; }
+    .sg-orbs { position: relative; min-height: 260px; overflow: hidden; display: grid; place-items: center; }
+    .sg-orbs p { position: relative; z-index: 1; }
+    .sg-video { max-width: 960px; }
+  </style>
+</head>
+<body data-page="styleguide" data-header-theme="over-dark">
+  <!-- @include header -->
+  <main id="conteudo" tabindex="-1">
+
+    <section class="section section--dark sg-intro" aria-labelledby="sg-titulo">
+      <div class="container">
+        <p class="eyebrow">Styleguide · só em desenvolvimento</p>
+        <h1 id="sg-titulo">Sistema visual <em class="accent">Verde Cerrado</em> e Ouro</h1>
+        <p class="lead">Tokens, tipografia, componentes, ícones e partials. Esta página não vai para o build; ela usa o header, o CTA de fotos e o rodapé reais.</p>
+        <nav class="sg-nav" aria-label="Seções do styleguide">
+          <a class="chip" href="#sg-cores">Cores</a>
+          <a class="chip" href="#sg-tipografia">Tipografia</a>
+          <a class="chip" href="#sg-header">Header</a>
+          <a class="chip" href="#sg-botoes">Botões</a>
+          <a class="chip" href="#sg-cards">Cards</a>
+          <a class="chip" href="#sg-dados">Dados</a>
+          <a class="chip" href="#sg-midia">Mídia</a>
+          <a class="chip" href="#sg-icones">Ícones</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Cores -->
+    <section class="sg-block" id="sg-cores" aria-labelledby="sg-cores-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Tokens</p>
+          <h2 class="section-title" id="sg-cores-t">Cores</h2>
+          <p class="lead">Ouro 500 só vira texto sobre verde; sobre creme, o texto em ouro usa o 700. Sobre as cores de tema o texto é sempre creme.</p>
+        </div>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--green-950);color:var(--cream-100)">Aa</div><div class="sg-swatch__meta"><b>--green-950</b><span>#0A2219 · rodapé</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--green-900);color:var(--gold-500)">Aa</div><div class="sg-swatch__meta"><b>--green-900</b><span>#0E3024 · menu, escuras</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--green-800);color:var(--cream-100)">Aa</div><div class="sg-swatch__meta"><b>--green-800</b><span>#123F2E · marca</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--green-700);color:var(--cream-100)">Aa</div><div class="sg-swatch__meta"><b>--green-700</b><span>#1B5640 · hover</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--green-100);color:var(--green-800)">Aa</div><div class="sg-swatch__meta"><b>--green-100</b><span>#E3EDE6 · fundos suaves</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--gold-500);color:var(--green-950)">Aa</div><div class="sg-swatch__meta"><b>--gold-500</b><span>#E3A72F · destaque</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--gold-300);color:var(--green-950)">Aa</div><div class="sg-swatch__meta"><b>--gold-300</b><span>#F2CF7E · brilhos</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--cream-100);color:var(--gold-700)">Aa</div><div class="sg-swatch__meta"><b>--gold-700</b><span>#8A6210 · ouro como texto</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--cream-50);color:var(--ink-900)">Aa</div><div class="sg-swatch__meta"><b>--cream-50</b><span>#FFFDF8 · cards</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--cream-100);color:var(--ink-900)">Aa</div><div class="sg-swatch__meta"><b>--cream-100</b><span>#FBF7EE · superfície</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--cream-200);color:var(--ink-900)">Aa</div><div class="sg-swatch__meta"><b>--cream-200</b><span>#F4ECDA · quente</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--cream-100);color:var(--ink-600)">Aa</div><div class="sg-swatch__meta"><b>--ink-900 / --ink-600</b><span>texto e secundário</span></div></div>
+        </div>
+        <p class="sg-label">Temas do hero, com texto creme</p>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--theme-natureza);color:var(--cream-100)">Natureza</div><div class="sg-swatch__meta"><b>--theme-natureza</b><span>#123F2E</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--theme-rio);color:var(--cream-100)">Rio</div><div class="sg-swatch__meta"><b>--theme-rio</b><span>#0F4C5C</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--theme-tradicao);color:var(--cream-100)">Tradição</div><div class="sg-swatch__meta"><b>--theme-tradicao</b><span>#8C3B21</span></div></div>
+          <div class="sg-swatch"><div class="sg-swatch__chip" style="background:var(--theme-fe);color:var(--cream-100)">Fé</div><div class="sg-swatch__meta"><b>--theme-fe</b><span>#8A5D0E</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipografia -->
+    <section class="sg-block" id="sg-tipografia" aria-labelledby="sg-tipo-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Poppins 400–800 · Fraunces itálico</p>
+          <h2 class="section-title" id="sg-tipo-t">Escala de <em class="accent">títulos</em></h2>
+        </div>
+        <p class="sg-label"><code>--fs-hero</code> creme sobre a cor do tema</p>
+        <div class="sg-theme-word" style="background:var(--theme-fe)">Fé</div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>--fs-display</code></p><p class="sg-type" style="font-size:var(--fs-display)">Santo <em class="accent">Hipólito</em></p></div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>--fs-h2</code> · <code>.section-title</code></p><p class="sg-type" style="font-size:var(--fs-h2)">Natureza tranquila, alma <em class="accent">mineira</em></p></div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>--fs-h3</code></p><p class="sg-type" style="font-size:var(--fs-h3);letter-spacing:-0.03em;line-height:1.1">Capela Nossa Senhora das Dores</p></div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>.lead</code> · <code>--fs-lead</code></p><p class="lead">Município da região Central de Minas Gerais, às margens do Rio das Velhas.</p></div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>--fs-body</code> · 400 · 1,7</p><p style="max-width:62ch">Texto corrido em Poppins 400, com 17 px e entrelinha 1,7. <a href="#sg-tipografia">Links no texto</a> ficam sublinhados e <strong>destaques</strong> usam o peso 700.</p></div>
+        <div class="sg-type-row"><p class="sg-label" style="margin:0"><code>--fs-small</code> · <code>.eyebrow</code></p><p style="font-size:var(--fs-small);color:var(--text-muted)">Texto pequeno, legendas e rodapé.</p><p class="eyebrow">Agenda cultural</p></div>
+      </div>
+    </section>
+
+    <!-- Header -->
+    <section class="sg-block" id="sg-header" aria-labelledby="sg-header-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Partial header</p>
+          <h2 class="section-title" id="sg-header-t">Header e menu</h2>
+          <p class="lead">O tema vem do ancestral com <code>data-header-theme</code>. Com <code>.is-scrolled</code>, vira vidro creme nos dois modos. O brasão mantém as cores sempre.</p>
+        </div>
+        <div class="sg-frames">
+          <p class="sg-label" style="margin:0"><code>data-header-theme="light"</code></p>
+          <div class="sg-frame" data-header-theme="light">
+            <header class="site-header">
+              <div class="site-header__inner container">
+                <a class="site-header__brand" href="/"><img class="site-header__crest" src="/img/brand/brasao-96.png" alt="" width="96" height="96" loading="lazy" decoding="async"><span class="site-header__name">Santo Hipólito <small class="site-header__sub">Minas Gerais</small></span></a>
+                <nav class="site-nav" aria-label="Exemplo claro"><a class="site-nav__link" href="/pontos-turisticos/">Pontos turísticos</a><a class="site-nav__link" href="/eventos/" aria-current="page">Eventos</a><a class="site-nav__link" href="/comunidades/">Comunidades</a><a class="site-nav__link" href="/comercios/">Comércios</a></nav>
+                <button class="site-header__toggle" type="button" aria-expanded="false" aria-label="Abrir menu (exemplo)"><svg class="site-header__icon--menu" aria-hidden="true"><use href="/icons.svg#menu"/></svg><svg class="site-header__icon--close" aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+              </div>
+            </header>
+          </div>
+
+          <p class="sg-label" style="margin:16px 0 0"><code>data-header-theme="over-dark"</code></p>
+          <div class="sg-frame sg-frame--photo" data-header-theme="over-dark">
+            <header class="site-header">
+              <div class="site-header__inner container">
+                <a class="site-header__brand" href="/"><img class="site-header__crest" src="/img/brand/brasao-96.png" alt="" width="96" height="96" loading="lazy" decoding="async"><span class="site-header__name">Santo Hipólito <small class="site-header__sub">Minas Gerais</small></span></a>
+                <nav class="site-nav" aria-label="Exemplo escuro"><a class="site-nav__link" href="/pontos-turisticos/" aria-current="page">Pontos turísticos</a><a class="site-nav__link" href="/eventos/">Eventos</a><a class="site-nav__link" href="/comunidades/">Comunidades</a><a class="site-nav__link" href="/comercios/">Comércios</a></nav>
+                <button class="site-header__toggle" type="button" aria-expanded="false" aria-label="Abrir menu (exemplo)"><svg class="site-header__icon--menu" aria-hidden="true"><use href="/icons.svg#menu"/></svg><svg class="site-header__icon--close" aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+              </div>
+            </header>
+          </div>
+
+          <p class="sg-label" style="margin:16px 0 0"><code>.is-scrolled</code> no modo light e no over-dark</p>
+          <div class="sg-frame sg-frame--photo" data-header-theme="light">
+            <header class="site-header is-scrolled">
+              <div class="site-header__inner container">
+                <a class="site-header__brand" href="/"><img class="site-header__crest" src="/img/brand/brasao-96.png" alt="" width="96" height="96" loading="lazy" decoding="async"><span class="site-header__name">Santo Hipólito <small class="site-header__sub">Minas Gerais</small></span></a>
+                <nav class="site-nav" aria-label="Exemplo com rolagem, claro"><a class="site-nav__link" href="/pontos-turisticos/">Pontos turísticos</a><a class="site-nav__link" href="/eventos/">Eventos</a><a class="site-nav__link" href="/comunidades/" aria-current="page">Comunidades</a><a class="site-nav__link" href="/comercios/">Comércios</a></nav>
+                <button class="site-header__toggle" type="button" aria-expanded="false" aria-label="Abrir menu (exemplo)"><svg class="site-header__icon--menu" aria-hidden="true"><use href="/icons.svg#menu"/></svg><svg class="site-header__icon--close" aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+              </div>
+            </header>
+          </div>
+          <div class="sg-frame sg-frame--theme" data-header-theme="over-dark">
+            <header class="site-header is-scrolled">
+              <div class="site-header__inner container">
+                <a class="site-header__brand" href="/"><img class="site-header__crest" src="/img/brand/brasao-96.png" alt="" width="96" height="96" loading="lazy" decoding="async"><span class="site-header__name">Santo Hipólito <small class="site-header__sub">Minas Gerais</small></span></a>
+                <nav class="site-nav" aria-label="Exemplo com rolagem, escuro"><a class="site-nav__link" href="/pontos-turisticos/">Pontos turísticos</a><a class="site-nav__link" href="/eventos/">Eventos</a><a class="site-nav__link" href="/comunidades/">Comunidades</a><a class="site-nav__link" href="/comercios/" aria-current="page">Comércios</a></nav>
+                <button class="site-header__toggle" type="button" aria-expanded="false" aria-label="Abrir menu (exemplo)"><svg class="site-header__icon--menu" aria-hidden="true"><use href="/icons.svg#menu"/></svg><svg class="site-header__icon--close" aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+              </div>
+            </header>
+          </div>
+
+          <p class="sg-label" style="margin:16px 0 0">Menu mobile aberto (≤ 900 px)</p>
+          <div class="sg-frame sg-frame--menu" data-header-theme="over-dark">
+            <header class="site-header">
+              <div class="site-header__inner container">
+                <a class="site-header__brand" href="/"><img class="site-header__crest" src="/img/brand/brasao-96.png" alt="" width="96" height="96" loading="lazy" decoding="async"><span class="site-header__name">Santo Hipólito <small class="site-header__sub">Minas Gerais</small></span></a>
+                <button class="site-header__toggle" type="button" aria-expanded="true" aria-label="Fechar menu (exemplo)"><svg class="site-header__icon--menu" aria-hidden="true"><use href="/icons.svg#menu"/></svg><svg class="site-header__icon--close" aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+              </div>
+            </header>
+            <div class="menu-mobile">
+              <nav aria-label="Exemplo de menu mobile">
+                <a class="menu-mobile__link" href="/"><span class="menu-mobile__index" aria-hidden="true">01</span>Início</a>
+                <a class="menu-mobile__link" href="/pontos-turisticos/" aria-current="page"><span class="menu-mobile__index" aria-hidden="true">02</span>Pontos turísticos</a>
+                <a class="menu-mobile__link" href="/eventos/"><span class="menu-mobile__index" aria-hidden="true">03</span>Eventos</a>
+                <a class="menu-mobile__link" href="/comunidades/"><span class="menu-mobile__index" aria-hidden="true">04</span>Comunidades</a>
+                <a class="menu-mobile__link" href="/comercios/"><span class="menu-mobile__index" aria-hidden="true">05</span>Comércios</a>
+              </nav>
+              <div class="menu-mobile__social">
+                <a class="btn btn--icon" href="https://www.instagram.com/visite_santohipolito/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#instagram"/></svg></a>
+                <a class="btn btn--icon" href="https://www.facebook.com/profile.php?id=100082786503942" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#facebook"/></svg></a>
+                <a class="btn btn--icon" href="https://wa.me/553899163019" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#whatsapp"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botões e pequenos -->
+    <section class="sg-block" id="sg-botoes" aria-labelledby="sg-botoes-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Ações</p>
+          <h2 class="section-title" id="sg-botoes-t">Botões, chips e arco</h2>
+          <p class="lead">Cada variante aparece em repouso e com <code>.is-hover</code>, a classe de demonstração que reproduz o hover.</p>
+        </div>
+        <p class="sg-label">Sobre creme</p>
+        <div class="sg-row">
+          <a class="btn btn--primary" href="#sg-botoes"><span class="btn__label">Explorar a cidade</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+          <a class="btn btn--primary is-hover" href="#sg-botoes"><span class="btn__label">Explorar a cidade</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+          <a class="btn btn--gold" href="#sg-botoes"><span class="btn__label">Como chegar</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#map-pin"/></svg></a>
+          <a class="btn btn--gold is-hover" href="#sg-botoes"><span class="btn__label">Como chegar</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#map-pin"/></svg></a>
+        </div>
+        <div class="sg-row" style="margin-top:16px">
+          <a class="btn btn--ghost" href="#sg-botoes"><span class="btn__label">Ver todos os eventos</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+          <a class="btn btn--ghost is-hover" href="#sg-botoes"><span class="btn__label">Ver todos os eventos</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+          <button class="btn btn--icon" type="button" aria-label="Compartilhar (exemplo)"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#share"/></svg></button>
+          <button class="btn btn--icon is-hover" type="button" aria-label="Compartilhar (exemplo com hover)"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#share"/></svg></button>
+        </div>
+        <p class="sg-label">Sobre verde (<code>.section--dark</code>)</p>
+        <div class="section--dark sg-pad">
+          <div class="sg-row">
+            <a class="btn btn--primary" href="#sg-botoes"><span class="btn__label">Explorar a cidade</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+            <a class="btn btn--primary is-hover" href="#sg-botoes"><span class="btn__label">Explorar a cidade</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+            <a class="btn btn--gold" href="#sg-botoes"><span class="btn__label">Ligar</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#phone"/></svg></a>
+            <a class="btn btn--ghost" href="#sg-botoes"><span class="btn__label">Ver todos</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+            <a class="btn btn--ghost is-hover" href="#sg-botoes"><span class="btn__label">Ver todos</span><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg></a>
+            <button class="btn btn--icon" type="button" aria-label="Instagram (exemplo)"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#instagram"/></svg></button>
+            <button class="btn btn--icon is-hover" type="button" aria-label="Instagram (exemplo com hover)"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#instagram"/></svg></button>
+          </div>
+          <div class="sg-row" style="margin-top:20px">
+            <span class="chip"><svg aria-hidden="true"><use href="/icons.svg#clock"/></svg>Missas aos domingos, 8h</span>
+            <span class="chip">Entrada franca</span>
+          </div>
+        </div>
+        <div class="sg-cols" style="margin-top:40px">
+          <div>
+            <p class="sg-label" style="margin-top:0"><code>.chip</code></p>
+            <div class="sg-row">
+              <span class="chip">06 lugares</span>
+              <span class="chip"><svg aria-hidden="true"><use href="/icons.svg#calendar"/></svg>Data de exemplo</span>
+              <span class="chip"><svg aria-hidden="true"><use href="/icons.svg#ticket"/></svg>Entrada franca</span>
+            </div>
+            <p class="sg-label"><code>.section-header--center</code></p>
+            <div class="section-header section-header--center" style="margin-bottom:0">
+              <p class="eyebrow">Explore</p>
+              <p class="section-title" style="color:var(--text-strong);font-weight:800;letter-spacing:var(--tracking-title)">Tudo o que a cidade <em class="accent">tem de melhor</em></p>
+            </div>
+          </div>
+          <div>
+            <p class="sg-label" style="margin-top:0"><code>.arch</code></p>
+            <div class="arch sg-arch"><img src="/_legado/capa/salo3.jpeg" alt="Casa de roça cercada de mato" width="822" height="1093" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <p class="sg-label"><code>.grid-12</code> (7 + 4 a partir de 900 px)</p>
+        <div class="grid-12 sg-grid-demo"><div>Coluna de texto (7)</div><div>Coluna lateral (4)</div></div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="sg-block section--warm" id="sg-cards" aria-labelledby="sg-cards-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Explore</p>
+          <h2 class="section-title" id="sg-cards-t">Bento e <em class="accent">cards</em></h2>
+          <p class="lead">O segundo card do bento está com <code>.is-hover</code>. A borda luminosa e o holofote dependem do mouse (fx/bento).</p>
+        </div>
+        <div class="bento" data-bento>
+          <a class="card-bento" href="/pontos-turisticos/" data-cursor="Ver">
+            <div class="card-bento__media"><img src="/_legado/ponte%20do%20rio/ponte%20so%20rio222.jpg" alt="Ponte sobre o Rio das Velhas ao pôr do sol" width="1905" height="3386" loading="lazy" decoding="async"></div>
+            <div class="card-bento__body">
+              <span class="card-bento__label">06 lugares</span>
+              <h3 class="card-bento__title">Pontos turísticos</h3>
+              <p class="card-bento__text">Pontes, praças e igrejas que guardam a memória da cidade.</p>
+              <span class="card-bento__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span>
+            </div>
+          </a>
+          <a class="card-bento is-hover" href="/eventos/" data-cursor="Ver">
+            <div class="card-bento__media"><img src="/_legado/capa/forrozao1.jpeg" alt="Forrozão visto do alto, com o palco e o público" width="1080" height="1080" loading="lazy" decoding="async"></div>
+            <div class="card-bento__body">
+              <span class="card-bento__label">07 eventos</span>
+              <h3 class="card-bento__title">Eventos</h3>
+              <p class="card-bento__text">Música, fé, esporte e tradição ao longo de todo o ano.</p>
+              <span class="card-bento__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span>
+            </div>
+          </a>
+          <a class="card-bento" href="/comunidades/" data-cursor="Ver">
+            <div class="card-bento__media"><img src="/_legado/SALOBRO/salobro.webp" alt="Paisagem com casas entre as árvores" width="1357" height="1020" loading="lazy" decoding="async"></div>
+            <div class="card-bento__body">
+              <span class="card-bento__label">05 comunidades</span>
+              <h3 class="card-bento__title">Comunidades</h3>
+              <p class="card-bento__text">Distritos e comunidades rurais que também são Santo Hipólito.</p>
+              <span class="card-bento__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span>
+            </div>
+          </a>
+          <a class="card-bento" href="/comercios/" data-cursor="Ver">
+            <div class="card-bento__media"><img src="/_legado/capa/salo2.jpeg" alt="Praça com cruzeiro e calçamento" width="822" height="1096" loading="lazy" decoding="async"></div>
+            <div class="card-bento__body">
+              <span class="card-bento__label">06 negócios</span>
+              <h3 class="card-bento__title">Comércios</h3>
+              <p class="card-bento__text">Negócios locais que movimentam a cidade.</p>
+              <span class="card-bento__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span>
+            </div>
+          </a>
+        </div>
+
+        <p class="sg-label" style="margin-top:56px"><code>.places-grid</code> com <code>.card-place</code>, <code>.card-type</code> e <code>.card-place--more</code></p>
+        <div class="places-grid">
+          <a class="card-place" href="/pontos-turisticos/" data-cursor="Ver">
+            <div class="card-place__media"><img src="/_legado/ponte%20do%20rio/ponte%20do%20rio%20das%20velhasffrggfggfg.jpg" alt="Vista aérea da ponte de ferro sobre o Rio das Velhas" width="900" height="1600" loading="lazy" decoding="async"></div>
+            <span class="card-place__index">01</span>
+            <span class="card-place__label">Ponto turístico</span>
+            <h3 class="card-place__title">Ponte sobre o Rio das Velhas</h3>
+            <p class="card-place__text">Resumo curto do lugar, em uma ou duas linhas.</p>
+          </a>
+          <a class="card-place" href="/pontos-turisticos/" data-cursor="Ver">
+            <div class="card-place__media"><img src="/_legado/setembro%207/5.jpeg" alt="Fanfarra com tambores diante do coreto" width="960" height="1280" loading="lazy" decoding="async"></div>
+            <span class="card-place__index">03</span>
+            <span class="card-place__label">Ponto turístico</span>
+            <h3 class="card-place__title">Capela Nossa Senhora das Dores</h3>
+            <p class="card-place__text">Título longo para conferir a quebra de linha em 390 px.</p>
+          </a>
+          <a class="card-type" href="/comercios/" data-cursor="Ver">
+            <span class="card-type__initial" aria-hidden="true">P</span>
+            <span class="card-type__label">Comércio</span>
+            <h3 class="card-type__title">Padaria JR</h3>
+            <span class="card-type__note"><svg aria-hidden="true"><use href="/icons.svg#camera"/></svg>Ainda não temos fotos. Envie a sua.</span>
+          </a>
+          <a class="card-place card-place--more" href="/pontos-turisticos/">
+            <svg aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg>
+            <span class="card-place__label">Pontos turísticos</span>
+            <span class="card-place__title">Ver todos</span>
+            <span class="card-place__text">Os 6 lugares da categoria</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dados -->
+    <section class="sg-block" id="sg-dados" aria-labelledby="sg-dados-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Em números</p>
+          <h2 class="section-title" id="sg-dados-t">Pequena no tamanho, <em class="accent">gigante no coração</em></h2>
+        </div>
+        <div class="stats">
+          <div class="stat"><p class="stat__number" data-count-to="2717"><span class="stat__value">2.717</span></p><p class="stat__label"><strong>Habitantes</strong>População estimada</p></div>
+          <div class="stat"><p class="stat__number" data-count-to="430" data-count-suffix=" km²"><span class="stat__value">430</span><span class="stat__suffix">km²</span></p><p class="stat__label"><strong>Território</strong>No bioma Cerrado</p></div>
+          <div class="stat"><p class="stat__number" data-count-to="63" data-count-years-since="1963-03-01"><span class="stat__value">63</span></p><p class="stat__label"><strong>Anos de emancipação</strong>Lei Estadual nº 2.764, de 1962</p></div>
+          <div class="stat"><p class="stat__number" data-count-to="270" data-count-suffix=" km"><span class="stat__value">270</span><span class="stat__suffix">km</span></p><p class="stat__label"><strong>De Belo Horizonte</strong>Microrregião de Curvelo</p></div>
+        </div>
+
+        <div class="sg-cols" style="margin-top:72px">
+          <div>
+            <p class="sg-label" style="margin-top:0"><code>.pillars</code></p>
+            <div class="pillars" data-pillars>
+              <div class="pillar"><span class="pillar__icon"><svg aria-hidden="true"><use href="/icons.svg#users"/></svg></span><h3 class="pillar__title">Gente acolhedora</h3><p class="pillar__text">Texto do pilar com até duas ou três linhas.</p></div>
+              <div class="pillar"><span class="pillar__icon"><svg aria-hidden="true"><use href="/icons.svg#waves"/></svg></span><h3 class="pillar__title">Às margens do Rio das Velhas</h3><p class="pillar__text">Texto do pilar com até duas ou três linhas.</p></div>
+              <div class="pillar"><span class="pillar__icon"><svg aria-hidden="true"><use href="/icons.svg#leaf"/></svg></span><h3 class="pillar__title">Cultura e tradição</h3><p class="pillar__text">Feijão tropeiro, frango com quiabo e doce de leite artesanal.</p></div>
+            </div>
+          </div>
+          <div>
+            <p class="sg-label" style="margin-top:0"><code>.breadcrumb</code> e <code>.info-card</code></p>
+            <nav class="breadcrumb" aria-label="Você está em">
+              <ol>
+                <li><a href="/">Início</a></li>
+                <li><a href="/pontos-turisticos/">Pontos turísticos</a></li>
+                <li><span aria-current="page">Coreto</span></li>
+              </ol>
+            </nav>
+            <div class="info-card" style="margin-top:24px">
+              <dl class="info-card__list">
+                <div class="info-card__row"><dt><svg aria-hidden="true"><use href="/icons.svg#church"/></svg>Categoria</dt><dd>Ponto turístico</dd></div>
+                <div class="info-card__row"><dt><svg aria-hidden="true"><use href="/icons.svg#map-pin"/></svg>Localização</dt><dd>Valor de exemplo</dd></div>
+                <div class="info-card__row"><dt><svg aria-hidden="true"><use href="/icons.svg#clock"/></svg>Horários</dt><dd>Valor de exemplo com texto mais longo, em duas linhas</dd></div>
+              </dl>
+              <div class="info-card__actions">
+                <a class="btn btn--gold" href="#sg-dados"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#map-pin"/></svg><span class="btn__label">Como chegar</span></a>
+                <a class="btn btn--primary" href="#sg-dados"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#phone"/></svg><span class="btn__label">Ligar</span></a>
+                <button class="btn btn--icon" type="button" aria-label="Compartilhar (exemplo)"><svg class="btn__icon" aria-hidden="true"><use href="/icons.svg#share"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="sg-label" style="margin-top:72px"><code>.timeline</code> (os dois primeiros itens com <code>.is-active</code>)</p>
+        <div class="timeline" data-timeline>
+          <div class="timeline__line"><div class="timeline__progress"></div></div>
+          <ol class="timeline__list">
+            <li class="timeline__item is-active"><p class="timeline__date">Origens</p><h3 class="timeline__title">Uma fazenda com capela</h3><p class="timeline__text">A cidade nasce em torno de uma fazenda com uma capela.</p></li>
+            <li class="timeline__item is-active"><p class="timeline__date">1910</p><h3 class="timeline__title">Chega a estação de trem</h3><p class="timeline__text">O povoado se forma ao redor da estação.</p></li>
+            <li class="timeline__item"><p class="timeline__date">30/12/1962</p><h3 class="timeline__title">Nasce o município</h3><p class="timeline__text">A Lei Estadual nº 2.764 cria o município de Santo Hipólito.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista com prévia e marquee -->
+    <section class="sg-block section--dark" aria-labelledby="sg-lista-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Agenda cultural</p>
+          <h2 class="section-title" id="sg-lista-t">Festas que <em class="accent">contam quem somos</em></h2>
+          <p class="lead">A segunda linha tem <code>img.hover-list__thumb</code>, que só aparece sem mouse ou com movimento reduzido.</p>
+        </div>
+        <div class="hover-list" data-hover-preview>
+          <a class="hover-list__row" href="/eventos/" data-preview-src="/_legado/capa/forrozao1.jpeg"><span class="hover-list__index">01</span><span class="hover-list__name">Forrozão</span><span class="hover-list__tag">Música</span><span class="hover-list__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span></a>
+          <a class="hover-list__row" href="/eventos/" data-preview-src="/_legado/argolinha%20corrida/4.jpeg"><span class="hover-list__index">02</span><span class="hover-list__name">Corrida de Argolinhas</span><span class="hover-list__tag">Tradição</span><img class="hover-list__thumb" src="/_legado/argolinha%20corrida/4.jpeg" alt="" width="1080" height="720" loading="lazy" decoding="async"><span class="hover-list__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span></a>
+          <a class="hover-list__row" href="/eventos/" data-preview-src="/_legado/quadrilha/quadrilha%206.jpg"><span class="hover-list__index">03</span><span class="hover-list__name">Quadrilha dos Amigos</span><span class="hover-list__tag">Festa junina</span><span class="hover-list__arrow" aria-hidden="true"><svg><use href="/icons.svg#arrow-up-right"/></svg></span></a>
+        </div>
+      </div>
+      <div class="marquee" data-marquee style="margin-top:72px">
+        <div class="marquee__track">
+          <span class="marquee__item">Forrozão</span><svg class="marquee__sep" aria-hidden="true"><use href="/icons.svg#star"/></svg>
+          <span class="marquee__item">Desfile Cívico</span><svg class="marquee__sep" aria-hidden="true"><use href="/icons.svg#star"/></svg>
+          <span class="marquee__item">Corrida de Argolinhas</span><svg class="marquee__sep" aria-hidden="true"><use href="/icons.svg#star"/></svg>
+          <span class="marquee__item">Quadrilha dos Amigos</span><svg class="marquee__sep" aria-hidden="true"><use href="/icons.svg#star"/></svg>
+          <span class="marquee__item">Campeonatos</span><svg class="marquee__sep" aria-hidden="true"><use href="/icons.svg#star"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mídia -->
+    <section class="sg-block" id="sg-midia" aria-labelledby="sg-midia-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Mídia</p>
+          <h2 class="section-title" id="sg-midia-t">Galeria, lightbox e vídeo</h2>
+        </div>
+        <div class="gallery" data-gallery>
+          <a class="gallery__item" href="/_legado/quadrilha/quadrilha%206.jpg" data-gallery-item data-cursor="Ver"><img src="/_legado/quadrilha/quadrilha%206.jpg" alt="Público de chapéu de palha numa festa à noite" width="2048" height="1365" loading="lazy" decoding="async"></a>
+          <a class="gallery__item" href="/_legado/capa/salo2.jpeg" data-gallery-item data-cursor="Ver"><img src="/_legado/capa/salo2.jpeg" alt="Praça com cruzeiro e calçamento" width="822" height="1096" loading="lazy" decoding="async"></a>
+          <a class="gallery__item" href="/_legado/argolinha%20corrida/4.jpeg" data-gallery-item data-cursor="Ver"><img src="/_legado/argolinha%20corrida/4.jpeg" alt="Cavaleiros na Corrida de Argolinhas" width="1080" height="720" loading="lazy" decoding="async"></a>
+          <a class="gallery__item" href="/_legado/ponte%20do%20rio/ponte%20so%20rio222.jpg" data-gallery-item data-cursor="Ver"><img src="/_legado/ponte%20do%20rio/ponte%20so%20rio222.jpg" alt="Ponte ao pôr do sol" width="1905" height="3386" loading="lazy" decoding="async"></a>
+          <a class="gallery__item" href="/_legado/camp%20reg/camp4.jpg" data-gallery-item data-cursor="Ver"><img src="/_legado/camp%20reg/camp4.jpg" alt="Time comemorando com o troféu à noite" width="1080" height="720" loading="lazy" decoding="async"></a>
+          <a class="gallery__item" href="/_legado/SALOBRO/salobro.webp" data-gallery-item data-cursor="Ver"><img src="/_legado/SALOBRO/salobro.webp" alt="Paisagem com casas entre as árvores" width="1357" height="1020" loading="lazy" decoding="async"></a>
+        </div>
+
+        <p class="sg-label"><code>dialog.lightbox</code> (estático, sem JS)</p>
+        <div class="sg-lightbox">
+          <dialog class="lightbox" open aria-label="Galeria de fotos (exemplo)">
+            <figure class="lightbox__figure">
+              <img class="lightbox__img" src="/_legado/quadrilha/quadrilha%206.jpg" alt="Público de chapéu de palha numa festa à noite" width="2048" height="1365" loading="lazy" decoding="async">
+              <figcaption class="lightbox__caption">Público de chapéu de palha numa festa à noite</figcaption>
+            </figure>
+            <p class="lightbox__counter" aria-live="polite">3 / 6</p>
+            <button class="lightbox__btn--prev" type="button" aria-label="Foto anterior"><svg aria-hidden="true"><use href="/icons.svg#chevron-left"/></svg></button>
+            <button class="lightbox__btn--next" type="button" aria-label="Próxima foto"><svg aria-hidden="true"><use href="/icons.svg#chevron-right"/></svg></button>
+            <button class="lightbox__btn--close" type="button" aria-label="Fechar galeria"><svg aria-hidden="true"><use href="/icons.svg#close"/></svg></button>
+          </dialog>
+        </div>
+
+        <p class="sg-label"><code>.video-player</code> (toggle com <code>aria-pressed="false"</code>, mute com <code>"true"</code>)</p>
+        <div class="video-player sg-video" data-video>
+          <video muted loop playsinline preload="none" poster="/_legado/capa/forrozao1.jpeg" width="1080" height="1080"></video>
+          <div class="video-player__controls">
+            <button type="button" data-video-toggle aria-pressed="false" aria-label="Reproduzir vídeo"><svg class="video-player__icon--play" aria-hidden="true"><use href="/icons.svg#play"/></svg><svg class="video-player__icon--pause" aria-hidden="true"><use href="/icons.svg#pause"/></svg></button>
+            <button type="button" data-video-mute aria-pressed="true" aria-label="Ativar som"><svg class="video-player__icon--sound" aria-hidden="true"><use href="/icons.svg#volume"/></svg><svg class="video-player__icon--muted" aria-hidden="true"><use href="/icons.svg#volume-off"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ícones, cursor, topo e esferas -->
+    <section class="sg-block" id="sg-icones" aria-labelledby="sg-icones-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">public/icons.svg</p>
+          <h2 class="section-title" id="sg-icones-t">Ícones e detalhes</h2>
+        </div>
+        <div class="sg-icons">
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg>arrow-right</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#arrow-up-right"/></svg>arrow-up-right</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#arrow-left"/></svg>arrow-left</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#chevron-left"/></svg>chevron-left</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#chevron-right"/></svg>chevron-right</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#close"/></svg>close</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#menu"/></svg>menu</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#instagram"/></svg>instagram</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#facebook"/></svg>facebook</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#whatsapp"/></svg>whatsapp</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#mail"/></svg>mail</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#phone"/></svg>phone</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#map-pin"/></svg>map-pin</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#clock"/></svg>clock</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#calendar"/></svg>calendar</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#ticket"/></svg>ticket</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#share"/></svg>share</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#play"/></svg>play</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#pause"/></svg>pause</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#volume"/></svg>volume</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#volume-off"/></svg>volume-off</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#star"/></svg>star</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#leaf"/></svg>leaf</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#waves"/></svg>waves</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#church"/></svg>church</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#users"/></svg>users</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#sun"/></svg>sun</div>
+          <div class="sg-icon"><svg aria-hidden="true"><use href="/icons.svg#camera"/></svg>camera</div>
+        </div>
+
+        <p class="sg-label">Cursor (<code>is-link</code>, <code>is-label</code>) e voltar ao topo (<code>.is-visible</code>), estáticos</p>
+        <div class="sg-static">
+          <span class="cursor-dot"></span>
+          <span class="cursor-ring"></span>
+          <span class="cursor-dot is-link"></span>
+          <span class="cursor-ring is-link"></span>
+          <span class="cursor-ring is-label"><span class="cursor-ring__label">Ver</span></span>
+          <button class="to-top is-visible" type="button" aria-label="Voltar ao topo (exemplo)">
+            <svg class="to-top__ring" viewBox="0 0 52 52" aria-hidden="true"><circle class="to-top__progress" cx="26" cy="26" r="22"/></svg>
+            <svg class="to-top__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"/></svg>
+          </button>
+        </div>
+
+        <p class="sg-label"><code>.orbs</code> sobre <code>.section--warm</code></p>
+        <div class="section--warm sg-orbs sg-pad">
+          <div class="orbs" aria-hidden="true"><span class="orb"></span><span class="orb"></span><span class="orb"></span></div>
+          <p class="eyebrow">Esferas desfocadas à deriva</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Efeitos (Task 4): reveal, split, parallax e fit-text. Bento, contadores, lista com prévia e marquee estão nas seções acima. -->
+    <section class="sg-block" id="sg-efeitos" aria-labelledby="sg-efeitos-t">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Efeitos</p>
+          <h2 class="section-title" id="sg-efeitos-t" data-split>Letra a letra, <em class="accent">sem pressa</em></h2>
+          <p class="lead" data-split-lines>As linhas deste parágrafo sobem mascaradas, uma de cada vez, quando entram na tela, e o texto continua legível sem JavaScript.</p>
+        </div>
+
+        <p class="sg-label"><code>data-reveal</code>, <code>data-reveal="clip"</code> e <code>data-reveal-stagger</code></p>
+        <div class="sg-cols">
+          <div>
+            <p data-reveal class="lead">Este bloco sobe 40 px e aparece.</p>
+            <div data-reveal="clip" class="arch" style="margin-top:24px;overflow:hidden;max-width:320px;aspect-ratio:4/5">
+              <img src="/_legado/capa/salo2.jpeg" alt="Praça com cruzeiro e calçamento" width="822" height="1096" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">
+            </div>
+          </div>
+          <div data-reveal-stagger style="display:grid;gap:12px;align-content:start">
+            <span class="chip">Um</span><span class="chip">Dois</span><span class="chip">Três</span><span class="chip">Quatro</span>
+          </div>
+        </div>
+
+        <p class="sg-label"><code>data-split-scrub</code></p>
+        <h3 class="section-title" data-split data-split-scrub>Preso ao scroll</h3>
+
+        <p class="sg-label"><code>data-parallax="0.15"</code></p>
+        <div class="arch" style="overflow:hidden;max-width:560px;aspect-ratio:3/2">
+          <img data-parallax="0.15" src="/_legado/argolinha%20corrida/4.jpeg" alt="Cavaleiros na Corrida de Argolinhas" width="1080" height="720" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">
+        </div>
+
+        <p class="sg-label"><code>data-fit-text</code> (cabe no pai em qualquer largura)</p>
+        <div style="overflow:hidden">
+          <p data-fit-text data-fit-width="0.92" style="width:max-content;margin-inline:auto;font-size:6rem;font-weight:800;letter-spacing:-0.05em;line-height:1.05;white-space:nowrap">Capela Nossa Senhora das Dores</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- @include cta-fotos -->
+  </main>
+  <!-- @include footer -->
+</body>
+</html>

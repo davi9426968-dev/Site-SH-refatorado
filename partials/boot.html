@@ -1,0 +1,15 @@
+<script>(function () {
+  try {
+    var root = document.documentElement
+    if (!root) return
+    root.classList.add('js')
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!reduce) {
+      root.classList.add('motion-ok')
+      // Mecanismo de segurança: se o JS não terminar de iniciar, o conteúdo aparece.
+      setTimeout(function () {
+        if (!window.__fxReady) root.classList.remove('motion-ok')
+      }, 4000)
+    }
+  } catch (e) {}
+})()</script>

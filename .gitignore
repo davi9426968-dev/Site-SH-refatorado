@@ -17,3 +17,6 @@ _fotos/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Capturas de tela do harness
+.shots/

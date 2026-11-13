@@ -1,0 +1,1940 @@
+{
+  "comercios/bar-da-nega/01": {
+    "dest": "comercios/bar-da-nega/01",
+    "alt": "Fachada amarela do Bar da Nega com o nome pintado e o desenho de uma cerveja",
+    "role": "cover",
+    "large": {
+      "url": "/img/comercios/bar-da-nega/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comercios/bar-da-nega/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/comercios-bar-da-nega-01.jpg"
+  },
+  "comercios/bar-da-nega/02": {
+    "dest": "comercios/bar-da-nega/02",
+    "alt": "Área coberta do bar com grade branca, mesas azuis e o nome pintado na parede",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/bar-da-nega/02-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comercios/bar-da-nega/02-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comercios/bar-da-nega/03": {
+    "dest": "comercios/bar-da-nega/03",
+    "alt": "Clientes reunidos em mesas azuis no Bar da Nega, de paredes laranja",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/bar-da-nega/03-1600.webp",
+      "width": 1092,
+      "height": 448
+    },
+    "small": {
+      "url": "/img/comercios/bar-da-nega/03-800.webp",
+      "width": 800,
+      "height": 328
+    }
+  },
+  "comercios/bar-da-nega/04": {
+    "dest": "comercios/bar-da-nega/04",
+    "alt": "Cantor ao microfone em noite de música no bar, com mesas azuis e público",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/bar-da-nega/04-1600.webp",
+      "width": 1092,
+      "height": 448
+    },
+    "small": {
+      "url": "/img/comercios/bar-da-nega/04-800.webp",
+      "width": 800,
+      "height": 328
+    }
+  },
+  "comercios/deposito-pereira/01": {
+    "dest": "comercios/deposito-pereira/01",
+    "alt": "Fachada do Depósito Pereira, com o nome pintado no muro branco e o portão aberto",
+    "role": "cover",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/01-1600.webp",
+      "width": 1032,
+      "height": 774
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/01-800.webp",
+      "width": 800,
+      "height": 600
+    },
+    "og": "/og/comercios-deposito-pereira-01.jpg"
+  },
+  "comercios/deposito-pereira/02": {
+    "dest": "comercios/deposito-pereira/02",
+    "alt": "Baldes de tinta e pneus de bicicleta empilhados na loja",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/02-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/02-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/deposito-pereira/03": {
+    "dest": "comercios/deposito-pereira/03",
+    "alt": "Corredor com baldes de tinta, vassouras e prateleiras de materiais",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/03-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/03-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/deposito-pereira/04": {
+    "dest": "comercios/deposito-pereira/04",
+    "alt": "Prateleiras com caixas de conexões hidráulicas e canos",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/04-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/04-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/deposito-pereira/05": {
+    "dest": "comercios/deposito-pereira/05",
+    "alt": "Estantes laranja com materiais de construção e ferramentas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/05-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/05-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/deposito-pereira/06": {
+    "dest": "comercios/deposito-pereira/06",
+    "alt": "Corredor da loja com prateleiras de peças e conexões",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/06-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/06-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/deposito-pereira/07": {
+    "dest": "comercios/deposito-pereira/07",
+    "alt": "Prateleiras com ferramentas e peças de cabo amarelo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/deposito-pereira/07-1600.webp",
+      "width": 774,
+      "height": 1032
+    },
+    "small": {
+      "url": "/img/comercios/deposito-pereira/07-800.webp",
+      "width": 774,
+      "height": 1032
+    }
+  },
+  "comercios/imperio-store/01": {
+    "dest": "comercios/imperio-store/01",
+    "alt": "Araras com roupas expostas no interior da Império Store",
+    "role": "cover",
+    "large": {
+      "url": "/img/comercios/imperio-store/01-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/comercios/imperio-store/01-800.webp",
+      "width": 800,
+      "height": 1422
+    },
+    "og": "/og/comercios-imperio-store-01.jpg"
+  },
+  "comercios/imperio-store/02": {
+    "dest": "comercios/imperio-store/02",
+    "alt": "Bonés e camisetas expostos na parede de madeira da loja",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/imperio-store/02-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/comercios/imperio-store/02-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "comercios/imperio-store/03": {
+    "dest": "comercios/imperio-store/03",
+    "alt": "Vitrine de vidro com bijuterias e colares em expositores na loja",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/imperio-store/03-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comercios/imperio-store/03-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comercios/imperio-store/04": {
+    "dest": "comercios/imperio-store/04",
+    "alt": "Capinhas de celular coloridas expostas na parede da loja",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/imperio-store/04-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comercios/imperio-store/04-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comercios/ma-fitness/01": {
+    "dest": "comercios/ma-fitness/01",
+    "alt": "Fachada rosa e branca da MA Fitness, com letreiro preto sobre a porta de vidro",
+    "role": "cover",
+    "large": {
+      "url": "/img/comercios/ma-fitness/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comercios/ma-fitness/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/comercios-ma-fitness-01.jpg"
+  },
+  "comercios/ma-fitness/02": {
+    "dest": "comercios/ma-fitness/02",
+    "alt": "Mulher abrindo a porta de vidro da MA Fitness, com roupas expostas no interior",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comercios/ma-fitness/02-1600.webp",
+      "width": 1186,
+      "height": 1599
+    },
+    "small": {
+      "url": "/img/comercios/ma-fitness/02-800.webp",
+      "width": 800,
+      "height": 1079
+    }
+  },
+  "comercios/padaria-jr/01": {
+    "dest": "comercios/padaria-jr/01",
+    "alt": "Vitrines com pães, bolos e salgados ao lado de uma geladeira de bebidas",
+    "role": "cover",
+    "large": {
+      "url": "/img/comercios/padaria-jr/01-1600.webp",
+      "width": 714,
+      "height": 833
+    },
+    "small": {
+      "url": "/img/comercios/padaria-jr/01-800.webp",
+      "width": 714,
+      "height": 833
+    },
+    "og": "/og/comercios-padaria-jr-01.jpg"
+  },
+  "comunidades/agua-boa/01": {
+    "dest": "comunidades/agua-boa/01",
+    "alt": "Rua calçada e praça com postes na Água Boa, sob céu com nuvens",
+    "role": "cover",
+    "large": {
+      "url": "/img/comunidades/agua-boa/01-1600.webp",
+      "width": 1280,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/comunidades/agua-boa/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/comunidades-agua-boa-01.jpg"
+  },
+  "comunidades/agua-boa/02": {
+    "dest": "comunidades/agua-boa/02",
+    "alt": "Árvore alta à beira de estrada de terra sob céu azul com nuvens",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/agua-boa/02-1600.webp",
+      "width": 720,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/comunidades/agua-boa/02-800.webp",
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "comunidades/agua-boa/03": {
+    "dest": "comunidades/agua-boa/03",
+    "alt": "Construção térrea verde e branca com telhado de cerâmica e pátio de cimento",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/agua-boa/03-1600.webp",
+      "width": 720,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/comunidades/agua-boa/03-800.webp",
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "comunidades/agua-boa/04": {
+    "dest": "comunidades/agua-boa/04",
+    "alt": "Cavalo e cocho de madeira em pasto aberto sob céu com nuvens",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/agua-boa/04-1600.webp",
+      "width": 720,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/comunidades/agua-boa/04-800.webp",
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "comunidades/agua-boa/05": {
+    "dest": "comunidades/agua-boa/05",
+    "alt": "Árvores e varanda coberta sob céu nublado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/agua-boa/05-1600.webp",
+      "width": 720,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/comunidades/agua-boa/05-800.webp",
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "comunidades/salobro/01": {
+    "dest": "comunidades/salobro/01",
+    "alt": "Casas coloridas entre árvores e pasto no Salobro, com morros ao fundo",
+    "role": "cover",
+    "large": {
+      "url": "/img/comunidades/salobro/01-1600.webp",
+      "width": 1357,
+      "height": 1020
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/01-800.webp",
+      "width": 800,
+      "height": 601
+    },
+    "og": "/og/comunidades-salobro-01.jpg"
+  },
+  "comunidades/salobro/02": {
+    "dest": "comunidades/salobro/02",
+    "alt": "Praça calçada com grande cruz de madeira, bancos e uma pequena construção branca",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/02-1600.webp",
+      "width": 822,
+      "height": 1096
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/02-800.webp",
+      "width": 800,
+      "height": 1067
+    }
+  },
+  "comunidades/salobro/03": {
+    "dest": "comunidades/salobro/03",
+    "alt": "Construção branca com barra azul e varanda, à beira de rua de terra",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/03-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/03-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/salobro/04": {
+    "dest": "comunidades/salobro/04",
+    "alt": "Casa rural simples em meio ao capim seco, com morros e árvores ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/04-1600.webp",
+      "width": 822,
+      "height": 1093
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/04-800.webp",
+      "width": 800,
+      "height": 1064
+    }
+  },
+  "comunidades/salobro/05": {
+    "dest": "comunidades/salobro/05",
+    "alt": "Árvore de galhos secos à beira de rua calçada, com casa ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/05-1600.webp",
+      "width": 822,
+      "height": 1093
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/05-800.webp",
+      "width": 800,
+      "height": 1064
+    }
+  },
+  "comunidades/salobro/06": {
+    "dest": "comunidades/salobro/06",
+    "alt": "Árvore caída com galhos secos em terreno de cerrado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/06-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/06-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/salobro/07": {
+    "dest": "comunidades/salobro/07",
+    "alt": "Construção de tijolos sem acabamento cercada de mato verde",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/salobro/07-1600.webp",
+      "width": 1280,
+      "height": 963
+    },
+    "small": {
+      "url": "/img/comunidades/salobro/07-800.webp",
+      "width": 800,
+      "height": 602
+    }
+  },
+  "comunidades/senhora-da-gloria/01": {
+    "dest": "comunidades/senhora-da-gloria/01",
+    "alt": "Pequena igreja branca com torre e porta amarela ao lado de grandes árvores",
+    "role": "cover",
+    "large": {
+      "url": "/img/comunidades/senhora-da-gloria/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/senhora-da-gloria/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/comunidades-senhora-da-gloria-01.jpg"
+  },
+  "comunidades/senhora-da-gloria/02": {
+    "dest": "comunidades/senhora-da-gloria/02",
+    "alt": "Casarão de dois andares com varandas de madeira azul e palmeiras",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/senhora-da-gloria/02-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/senhora-da-gloria/02-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/senhora-da-gloria/03": {
+    "dest": "comunidades/senhora-da-gloria/03",
+    "alt": "Árvore frondosa em pasto verde ao lado de estrada de terra vermelha",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/senhora-da-gloria/03-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/senhora-da-gloria/03-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/senhora-da-gloria/04": {
+    "dest": "comunidades/senhora-da-gloria/04",
+    "alt": "Cachoeira caindo em poço de água azul-turquesa entre rochas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/senhora-da-gloria/04-1600.webp",
+      "width": 686,
+      "height": 386
+    },
+    "small": {
+      "url": "/img/comunidades/senhora-da-gloria/04-800.webp",
+      "width": 686,
+      "height": 386
+    }
+  },
+  "comunidades/valo-fundo/01": {
+    "dest": "comunidades/valo-fundo/01",
+    "alt": "Rio de águas claras correndo entre pedras, com mata e morros ao fundo",
+    "role": "cover",
+    "large": {
+      "url": "/img/comunidades/valo-fundo/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/valo-fundo/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/comunidades-valo-fundo-01.jpg"
+  },
+  "comunidades/valo-fundo/02": {
+    "dest": "comunidades/valo-fundo/02",
+    "alt": "Casa antiga de paredes brancas e telhado de telhas coloniais entre plantas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/valo-fundo/02-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/valo-fundo/02-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/valo-fundo/03": {
+    "dest": "comunidades/valo-fundo/03",
+    "alt": "Trilha em encosta gramada com serra coberta de mata ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/valo-fundo/03-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/comunidades/valo-fundo/03-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "comunidades/valo-fundo/04": {
+    "dest": "comunidades/valo-fundo/04",
+    "alt": "Campo gramado com árvores esparsas e estrada de terra",
+    "role": "gallery",
+    "large": {
+      "url": "/img/comunidades/valo-fundo/04-1600.webp",
+      "width": 652,
+      "height": 370
+    },
+    "small": {
+      "url": "/img/comunidades/valo-fundo/04-800.webp",
+      "width": 652,
+      "height": 370
+    }
+  },
+  "eventos/campeonato-de-bairros/01": {
+    "dest": "eventos/campeonato-de-bairros/01",
+    "alt": "Jogador de camisa roxa chutando a bola na quadra à noite",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/campeonato-de-bairros/01-1600.webp",
+      "width": 1440,
+      "height": 959
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-de-bairros/01-800.webp",
+      "width": 800,
+      "height": 533
+    },
+    "og": "/og/eventos-campeonato-de-bairros-01.jpg"
+  },
+  "eventos/campeonato-de-bairros/02": {
+    "dest": "eventos/campeonato-de-bairros/02",
+    "alt": "Time de uniforme azul-marinho posado na quadra com a bola",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-de-bairros/02-1600.webp",
+      "width": 1065,
+      "height": 710
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-de-bairros/02-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-de-bairros/03": {
+    "dest": "eventos/campeonato-de-bairros/03",
+    "alt": "Time de camisa roxa e goleiro de amarelo posados na quadra",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-de-bairros/03-1600.webp",
+      "width": 1065,
+      "height": 710
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-de-bairros/03-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-regional/01": {
+    "dest": "eventos/campeonato-regional/01",
+    "alt": "Time de uniforme branco comemorando com o troféu no campo, entre fumaça e refletores",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/01-1600.webp",
+      "width": 900,
+      "height": 600
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/01-800.webp",
+      "width": 800,
+      "height": 533
+    },
+    "og": "/og/eventos-campeonato-regional-01.jpg"
+  },
+  "eventos/campeonato-regional/02": {
+    "dest": "eventos/campeonato-regional/02",
+    "alt": "Jogadores e torcedores comemorando juntos no campo à noite, com o troféu",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/02-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/02-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-regional/03": {
+    "dest": "eventos/campeonato-regional/03",
+    "alt": "Troféus dourados enfileirados no gramado à noite",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/03-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/03-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-regional/04": {
+    "dest": "eventos/campeonato-regional/04",
+    "alt": "Jogadores de camisa listrada abraçados em roda ao redor do troféu",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/04-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/04-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-regional/05": {
+    "dest": "eventos/campeonato-regional/05",
+    "alt": "Atletas segurando no campo a bandeira com o brasão de Santo Hipólito",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/05-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/05-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/campeonato-regional/06": {
+    "dest": "eventos/campeonato-regional/06",
+    "alt": "Jogadores de uniforme branco se abraçando no gramado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/campeonato-regional/06-1600.webp",
+      "width": 1500,
+      "height": 1000
+    },
+    "small": {
+      "url": "/img/eventos/campeonato-regional/06-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/01": {
+    "dest": "eventos/corrida-de-argolinhas/01",
+    "alt": "Cavaleiro a galope com a lança erguida sob a trave das argolas na pista de terra",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/01-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/01-800.webp",
+      "width": 800,
+      "height": 533
+    },
+    "og": "/og/eventos-corrida-de-argolinhas-01.jpg"
+  },
+  "eventos/corrida-de-argolinhas/02": {
+    "dest": "eventos/corrida-de-argolinhas/02",
+    "alt": "Cavaleiros de camisa azul enfileirados em seus cavalos na arena de areia",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/02-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/02-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/03": {
+    "dest": "eventos/corrida-de-argolinhas/03",
+    "alt": "Cavaleiros de camisa vermelha e branca montados na arena, com tendas ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/03-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/03-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/04": {
+    "dest": "eventos/corrida-de-argolinhas/04",
+    "alt": "Fila de cavaleiros montados na arena sob céu azul com nuvens",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/04-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/04-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/05": {
+    "dest": "eventos/corrida-de-argolinhas/05",
+    "alt": "Cavaleiros de camisa verde e azul em seus cavalos à beira da pista",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/05-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/05-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/06": {
+    "dest": "eventos/corrida-de-argolinhas/06",
+    "alt": "Grupo de cavaleiros de chapéu e boné montados na arena",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/06-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/06-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/07": {
+    "dest": "eventos/corrida-de-argolinhas/07",
+    "alt": "Cavaleiro em cavalo malhado acenando sob a trave das argolas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/07-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/07-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "eventos/corrida-de-argolinhas/08": {
+    "dest": "eventos/corrida-de-argolinhas/08",
+    "alt": "Cavaleiro de camisa azul apontando para o alto ao percorrer a pista cercada",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/08-1600.webp",
+      "width": 1080,
+      "height": 719
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/08-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/09": {
+    "dest": "eventos/corrida-de-argolinhas/09",
+    "alt": "Cavaleiros conduzindo seus cavalos pela arena, com público ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/09-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/09-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/10": {
+    "dest": "eventos/corrida-de-argolinhas/10",
+    "alt": "Cavaleiro de camisa vermelha erguendo o punho na pista entre cercas de madeira",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/10-1600.webp",
+      "width": 1080,
+      "height": 719
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/10-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/11": {
+    "dest": "eventos/corrida-de-argolinhas/11",
+    "alt": "Dois cavaleiros de camisa azul montados lado a lado, um deles segurando a lança",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/11-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/11-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/corrida-de-argolinhas/12": {
+    "dest": "eventos/corrida-de-argolinhas/12",
+    "alt": "Cavaleiros e cavalos reunidos na arena de areia sob céu azul",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/corrida-de-argolinhas/12-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/eventos/corrida-de-argolinhas/12-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/desfile-civico/01": {
+    "dest": "eventos/desfile-civico/01",
+    "alt": "Baliza de saia branca à frente da fanfarra de uniforme azul, com bandeira erguida",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/desfile-civico/01-1600.webp",
+      "width": 1280,
+      "height": 853
+    },
+    "small": {
+      "url": "/img/eventos/desfile-civico/01-800.webp",
+      "width": 800,
+      "height": 533
+    },
+    "og": "/og/eventos-desfile-civico-01.jpg"
+  },
+  "eventos/desfile-civico/02": {
+    "dest": "eventos/desfile-civico/02",
+    "alt": "Integrantes da fanfarra tocando caixas, de camisa azul e calça branca",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/desfile-civico/02-1600.webp",
+      "width": 792,
+      "height": 1188
+    },
+    "small": {
+      "url": "/img/eventos/desfile-civico/02-800.webp",
+      "width": 792,
+      "height": 1188
+    }
+  },
+  "eventos/desfile-civico/03": {
+    "dest": "eventos/desfile-civico/03",
+    "alt": "Três integrantes da fanfarra com caixas e camisas azuis bordadas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/desfile-civico/03-1600.webp",
+      "width": 815,
+      "height": 1223
+    },
+    "small": {
+      "url": "/img/eventos/desfile-civico/03-800.webp",
+      "width": 800,
+      "height": 1200
+    }
+  },
+  "eventos/desfile-civico/04": {
+    "dest": "eventos/desfile-civico/04",
+    "alt": "Quatro integrantes da fanfarra posando com seus instrumentos em dia de sol",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/desfile-civico/04-1600.webp",
+      "width": 960,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/eventos/desfile-civico/04-800.webp",
+      "width": 800,
+      "height": 1067
+    }
+  },
+  "eventos/forrozao/01": {
+    "dest": "eventos/forrozao/01",
+    "alt": "Vista aérea do Forrozão à noite, com palco iluminado, tendas e grande público",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/forrozao/01-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/eventos/forrozao/01-800.webp",
+      "width": 800,
+      "height": 800
+    },
+    "og": "/og/eventos-forrozao-01.jpg"
+  },
+  "eventos/forrozao/02": {
+    "dest": "eventos/forrozao/02",
+    "alt": "Multidão na festa à noite, sob tecidos coloridos e um balão listrado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/forrozao/02-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/eventos/forrozao/02-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "eventos/forrozao/03": {
+    "dest": "eventos/forrozao/03",
+    "alt": "Homens reunidos no palco sob luzes cor-de-rosa e roxas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/forrozao/03-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/eventos/forrozao/03-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "eventos/forrozao/04": {
+    "dest": "eventos/forrozao/04",
+    "alt": "Artista de costas no palco diante do público lotado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/forrozao/04-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/eventos/forrozao/04-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "eventos/forrozao/05": {
+    "dest": "eventos/forrozao/05",
+    "alt": "Tecladista de chapéu no palco sob chuva de papel picado e bandeirinhas coloridas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/forrozao/05-1600.webp",
+      "width": 1440,
+      "height": 1795
+    },
+    "small": {
+      "url": "/img/eventos/forrozao/05-800.webp",
+      "width": 800,
+      "height": 997
+    }
+  },
+  "eventos/quadrilha-dos-amigos/01": {
+    "dest": "eventos/quadrilha-dos-amigos/01",
+    "alt": "Pessoas dançando à noite sob bandeirinhas e enfeites juninos coloridos",
+    "role": "cover",
+    "large": {
+      "url": "/img/eventos/quadrilha-dos-amigos/01-1600.webp",
+      "width": 960,
+      "height": 640
+    },
+    "small": {
+      "url": "/img/eventos/quadrilha-dos-amigos/01-800.webp",
+      "width": 800,
+      "height": 533
+    },
+    "og": "/og/eventos-quadrilha-dos-amigos-01.jpg"
+  },
+  "eventos/quadrilha-dos-amigos/02": {
+    "dest": "eventos/quadrilha-dos-amigos/02",
+    "alt": "Dançarinos de chapéu de palha e camisa xadrez na festa à noite",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/quadrilha-dos-amigos/02-1600.webp",
+      "width": 1600,
+      "height": 1066
+    },
+    "small": {
+      "url": "/img/eventos/quadrilha-dos-amigos/02-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/quadrilha-dos-amigos/03": {
+    "dest": "eventos/quadrilha-dos-amigos/03",
+    "alt": "Casal de braços dados dançando na festa, sob bandeirinhas coloridas",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/quadrilha-dos-amigos/03-1600.webp",
+      "width": 960,
+      "height": 640
+    },
+    "small": {
+      "url": "/img/eventos/quadrilha-dos-amigos/03-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "eventos/quadrilha-dos-amigos/04": {
+    "dest": "eventos/quadrilha-dos-amigos/04",
+    "alt": "Sanfoneiro tocando e cantando ao microfone durante a festa",
+    "role": "gallery",
+    "large": {
+      "url": "/img/eventos/quadrilha-dos-amigos/04-1600.webp",
+      "width": 960,
+      "height": 640
+    },
+    "small": {
+      "url": "/img/eventos/quadrilha-dos-amigos/04-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "home/cat-comercios": {
+    "dest": "home/cat-comercios",
+    "alt": "Fachada rosa e branca de loja com letreiro sobre a porta de vidro",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/cat-comercios-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/cat-comercios-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/home-cat-comercios.jpg"
+  },
+  "home/cat-comunidades": {
+    "dest": "home/cat-comunidades",
+    "alt": "Casas entre árvores e pasto na comunidade do Salobro",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/cat-comunidades-1600.webp",
+      "width": 1357,
+      "height": 1020
+    },
+    "small": {
+      "url": "/img/home/cat-comunidades-800.webp",
+      "width": 800,
+      "height": 601
+    },
+    "og": "/og/home-cat-comunidades.jpg"
+  },
+  "home/cat-eventos": {
+    "dest": "home/cat-eventos",
+    "alt": "Público e palco iluminado do Forrozão vistos do alto à noite",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/cat-eventos-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/cat-eventos-800.webp",
+      "width": 800,
+      "height": 800
+    },
+    "og": "/og/home-cat-eventos.jpg"
+  },
+  "home/cat-pontos-turisticos": {
+    "dest": "home/cat-pontos-turisticos",
+    "alt": "Coreto de escadas azuis na praça ao entardecer",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/cat-pontos-turisticos-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/cat-pontos-turisticos-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/home-cat-pontos-turisticos.jpg"
+  },
+  "home/cidade-matriz": {
+    "dest": "home/cidade-matriz",
+    "alt": "Fachada creme da Igreja Matriz com portas em arco e escadaria",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/cidade-matriz-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/cidade-matriz-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "home/numeros-fundo": {
+    "dest": "home/numeros-fundo",
+    "alt": "Árvore frondosa em pasto verde ao lado de estrada de terra",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/numeros-fundo-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/numeros-fundo-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "home/og-default": {
+    "dest": "home/og-default",
+    "alt": "Rio de águas claras correndo entre pedras e mata, com morros ao fundo",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/og-default-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/og-default-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/home-og-default.jpg"
+  },
+  "home/orbita-fe-1": {
+    "dest": "home/orbita-fe-1",
+    "alt": "Igreja Matriz com sua torre alta sob céu azul",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-fe-1-1600.webp",
+      "width": 495,
+      "height": 620
+    },
+    "small": {
+      "url": "/img/home/orbita-fe-1-800.webp",
+      "width": 495,
+      "height": 620
+    }
+  },
+  "home/orbita-fe-2": {
+    "dest": "home/orbita-fe-2",
+    "alt": "Pequena igreja branca com torre entre árvores",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-fe-2-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/orbita-fe-2-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "home/orbita-fe-3": {
+    "dest": "home/orbita-fe-3",
+    "alt": "Fachada branca da capela com cruz azul",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-fe-3-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/orbita-fe-3-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "home/orbita-fe-4": {
+    "dest": "home/orbita-fe-4",
+    "alt": "Grande cruz de madeira em praça calçada",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-fe-4-1600.webp",
+      "width": 822,
+      "height": 1096
+    },
+    "small": {
+      "url": "/img/home/orbita-fe-4-800.webp",
+      "width": 800,
+      "height": 1067
+    }
+  },
+  "home/orbita-natureza-1": {
+    "dest": "home/orbita-natureza-1",
+    "alt": "Cachoeira caindo em poço de água azul-turquesa",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-natureza-1-1600.webp",
+      "width": 686,
+      "height": 386
+    },
+    "small": {
+      "url": "/img/home/orbita-natureza-1-800.webp",
+      "width": 686,
+      "height": 386
+    }
+  },
+  "home/orbita-natureza-2": {
+    "dest": "home/orbita-natureza-2",
+    "alt": "Campo com árvores esparsas e estrada de terra",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-natureza-2-1600.webp",
+      "width": 652,
+      "height": 370
+    },
+    "small": {
+      "url": "/img/home/orbita-natureza-2-800.webp",
+      "width": 652,
+      "height": 370
+    }
+  },
+  "home/orbita-natureza-3": {
+    "dest": "home/orbita-natureza-3",
+    "alt": "Cavalo em pasto aberto sob céu com nuvens",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-natureza-3-1600.webp",
+      "width": 720,
+      "height": 1280
+    },
+    "small": {
+      "url": "/img/home/orbita-natureza-3-800.webp",
+      "width": 720,
+      "height": 1280
+    }
+  },
+  "home/orbita-natureza-4": {
+    "dest": "home/orbita-natureza-4",
+    "alt": "Trilha em encosta gramada com serra ao fundo",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-natureza-4-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/home/orbita-natureza-4-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "home/orbita-rio-1": {
+    "dest": "home/orbita-rio-1",
+    "alt": "Rio das Velhas e a ponte metálica vistos do alto",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-rio-1-1600.webp",
+      "width": 1024,
+      "height": 575
+    },
+    "small": {
+      "url": "/img/home/orbita-rio-1-800.webp",
+      "width": 800,
+      "height": 449
+    }
+  },
+  "home/orbita-rio-2": {
+    "dest": "home/orbita-rio-2",
+    "alt": "Placa da Ponte sobre o Rio das Velhas junto à estrutura de ferro",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-rio-2-1600.webp",
+      "width": 1086,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/home/orbita-rio-2-800.webp",
+      "width": 800,
+      "height": 530
+    }
+  },
+  "home/orbita-rio-3": {
+    "dest": "home/orbita-rio-3",
+    "alt": "Silhueta da ponte sobre o rio ao pôr do sol",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-rio-3-1600.webp",
+      "width": 1600,
+      "height": 2844
+    },
+    "small": {
+      "url": "/img/home/orbita-rio-3-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "home/orbita-rio-4": {
+    "dest": "home/orbita-rio-4",
+    "alt": "Ponte de ferro sobre o rio vista do alto, entre pastos verdes",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-rio-4-1600.webp",
+      "width": 900,
+      "height": 1600
+    },
+    "small": {
+      "url": "/img/home/orbita-rio-4-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "home/orbita-tradicao-1": {
+    "dest": "home/orbita-tradicao-1",
+    "alt": "Cavaleiro a galope sob a trave das argolas",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-tradicao-1-1600.webp",
+      "width": 1080,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/home/orbita-tradicao-1-800.webp",
+      "width": 800,
+      "height": 533
+    }
+  },
+  "home/orbita-tradicao-2": {
+    "dest": "home/orbita-tradicao-2",
+    "alt": "Tecladista no palco sob papel picado e bandeirinhas",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-tradicao-2-1600.webp",
+      "width": 1440,
+      "height": 1795
+    },
+    "small": {
+      "url": "/img/home/orbita-tradicao-2-800.webp",
+      "width": 800,
+      "height": 997
+    }
+  },
+  "home/orbita-tradicao-3": {
+    "dest": "home/orbita-tradicao-3",
+    "alt": "Multidão na festa noturna sob tecidos coloridos",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-tradicao-3-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/orbita-tradicao-3-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "home/orbita-tradicao-4": {
+    "dest": "home/orbita-tradicao-4",
+    "alt": "Artista no palco diante do público em noite de festa",
+    "role": "orbit",
+    "large": {
+      "url": "/img/home/orbita-tradicao-4-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/orbita-tradicao-4-800.webp",
+      "width": 800,
+      "height": 800
+    }
+  },
+  "home/tema-fe": {
+    "dest": "home/tema-fe",
+    "alt": "Capela Nossa Senhora das Dores, branca com barra azul e cruz na fachada",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/tema-fe-1600.webp",
+      "width": 810,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/tema-fe-800.webp",
+      "width": 800,
+      "height": 1067
+    }
+  },
+  "home/tema-natureza": {
+    "dest": "home/tema-natureza",
+    "alt": "Rio de águas claras entre pedras e mata, com morros ao fundo",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/tema-natureza-1600.webp",
+      "width": 810,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/home/tema-natureza-800.webp",
+      "width": 800,
+      "height": 1067
+    },
+    "extra": [
+      {
+        "url": "/img/home/tema-natureza-600.webp",
+        "width": 600,
+        "height": 800
+      }
+    ]
+  },
+  "home/tema-rio": {
+    "dest": "home/tema-rio",
+    "alt": "Ponte metálica sobre as águas verdes do Rio das Velhas, vista do alto",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/tema-rio-1600.webp",
+      "width": 506,
+      "height": 675
+    },
+    "small": {
+      "url": "/img/home/tema-rio-800.webp",
+      "width": 506,
+      "height": 675
+    }
+  },
+  "home/tema-tradicao": {
+    "dest": "home/tema-tradicao",
+    "alt": "Cavaleiros montados na arena da Corrida de Argolinhas",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/tema-tradicao-1600.webp",
+      "width": 540,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/home/tema-tradicao-800.webp",
+      "width": 540,
+      "height": 720
+    }
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/01": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/01",
+    "alt": "Capela branca com barra azul e cruz na fachada, com jardim e arbustos floridos à frente",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/pontos-turisticos-capela-nossa-senhora-das-dores-01.jpg"
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/02": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/02",
+    "alt": "Fachada branca da capela com grande cruz azul sob o céu azul",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/02-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/02-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/03": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/03",
+    "alt": "Fachada da capela ao entardecer, com palmeira e calçada à frente",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/03-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/03-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/04": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/04",
+    "alt": "Placa “Capela Nossa Sr. das Dores” no gramado, com a capela ao fundo ao anoitecer",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/04-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/04-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/05": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/05",
+    "alt": "Palmeira e banco na praça da capela, com poste aceso ao entardecer",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/05-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/05-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/capela-nossa-senhora-das-dores/06": {
+    "dest": "pontos-turisticos/capela-nossa-senhora-das-dores/06",
+    "alt": "Praça gramada com banco e postes acesos sob o céu rosado do fim de tarde",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/06-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/capela-nossa-senhora-das-dores/06-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/coreto/01": {
+    "dest": "pontos-turisticos/coreto/01",
+    "alt": "Coreto de escadas azuis na praça ao entardecer, entre palmeiras e árvores",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/coreto/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/coreto/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/pontos-turisticos-coreto-01.jpg"
+  },
+  "pontos-turisticos/coreto/02": {
+    "dest": "pontos-turisticos/coreto/02",
+    "alt": "Vista de dentro do coreto, com guarda-corpo azul e a rua ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/coreto/02-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/coreto/02-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/coreto/03": {
+    "dest": "pontos-turisticos/coreto/03",
+    "alt": "Telhado e guarda-corpo azul do coreto, com árvores e a rua ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/coreto/03-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/coreto/03-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/coreto/04": {
+    "dest": "pontos-turisticos/coreto/04",
+    "alt": "Canteiros com árvores e caminhos de cimento na praça do coreto",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/coreto/04-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/coreto/04-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/igreja-matriz/01": {
+    "dest": "pontos-turisticos/igreja-matriz/01",
+    "alt": "Fachada creme da Igreja Matriz com portas em arco, escadaria e cruzeiro ao lado",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/igreja-matriz/01-1600.webp",
+      "width": 1080,
+      "height": 1080
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/igreja-matriz/01-800.webp",
+      "width": 800,
+      "height": 800
+    },
+    "og": "/og/pontos-turisticos-igreja-matriz-01.jpg"
+  },
+  "pontos-turisticos/igreja-matriz/02": {
+    "dest": "pontos-turisticos/igreja-matriz/02",
+    "alt": "Igreja Matriz com sua torre alta, vista do caminho de pedras que sobe pelo gramado",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/igreja-matriz/02-1600.webp",
+      "width": 495,
+      "height": 620
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/igreja-matriz/02-800.webp",
+      "width": 495,
+      "height": 620
+    }
+  },
+  "pontos-turisticos/igreja-matriz/03": {
+    "dest": "pontos-turisticos/igreja-matriz/03",
+    "alt": "Vista aérea da Igreja Matriz cercada de árvores e casas de telhado vermelho",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/igreja-matriz/03-1600.webp",
+      "width": 1600,
+      "height": 2845
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/igreja-matriz/03-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/igreja-matriz/04": {
+    "dest": "pontos-turisticos/igreja-matriz/04",
+    "alt": "Torre e lateral da Igreja Matriz com janelas verdes em arco ao entardecer",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/igreja-matriz/04-1600.webp",
+      "width": 654,
+      "height": 1163
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/igreja-matriz/04-800.webp",
+      "width": 654,
+      "height": 1163
+    }
+  },
+  "pontos-turisticos/ponte-rio-das-velhas/01": {
+    "dest": "pontos-turisticos/ponte-rio-das-velhas/01",
+    "alt": "Vista aérea da ponte metálica sobre as águas verdes do Rio das Velhas, entre matas e areais",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/01-1600.webp",
+      "width": 1200,
+      "height": 675
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/pontos-turisticos-ponte-rio-das-velhas-01.jpg"
+  },
+  "pontos-turisticos/ponte-rio-das-velhas/02": {
+    "dest": "pontos-turisticos/ponte-rio-das-velhas/02",
+    "alt": "Vista aérea do Rio das Velhas cortando a mata, com a ponte metálica atravessando o leito",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/02-1600.webp",
+      "width": 1024,
+      "height": 575
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/02-800.webp",
+      "width": 800,
+      "height": 449
+    }
+  },
+  "pontos-turisticos/ponte-rio-das-velhas/03": {
+    "dest": "pontos-turisticos/ponte-rio-das-velhas/03",
+    "alt": "Placa azul “Ponte sobre o Rio das Velhas” ao lado da entrada da ponte de ferro",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/03-1600.webp",
+      "width": 1086,
+      "height": 720
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/03-800.webp",
+      "width": 800,
+      "height": 530
+    }
+  },
+  "pontos-turisticos/ponte-rio-das-velhas/04": {
+    "dest": "pontos-turisticos/ponte-rio-das-velhas/04",
+    "alt": "Vista aérea da ponte de ferro sobre o rio, com casas e pastos verdes ao redor",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/04-1600.webp",
+      "width": 900,
+      "height": 1600
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/04-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/ponte-rio-das-velhas/05": {
+    "dest": "pontos-turisticos/ponte-rio-das-velhas/05",
+    "alt": "Silhueta da ponte de ferro sobre o rio, que reflete o céu dourado do pôr do sol",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/05-1600.webp",
+      "width": 1600,
+      "height": 2844
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/ponte-rio-das-velhas/05-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/praca-joao-velho/01": {
+    "dest": "pontos-turisticos/praca-joao-velho/01",
+    "alt": "Estrelas de luzes decorativas sobre o gramado da Praça João Velho",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/01-1600.webp",
+      "width": 1600,
+      "height": 1200
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/01-800.webp",
+      "width": 800,
+      "height": 600
+    },
+    "og": "/og/pontos-turisticos-praca-joao-velho-01.jpg"
+  },
+  "pontos-turisticos/praca-joao-velho/02": {
+    "dest": "pontos-turisticos/praca-joao-velho/02",
+    "alt": "Fonte com jatos d’água no centro da praça ao anoitecer",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/02-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/02-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/praca-joao-velho/03": {
+    "dest": "pontos-turisticos/praca-joao-velho/03",
+    "alt": "Gramado com palmeira, lixeiras coloridas e mesas de concreto na praça à noite",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/03-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/03-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/praca-joao-velho/04": {
+    "dest": "pontos-turisticos/praca-joao-velho/04",
+    "alt": "Pinheiro e arbustos floridos no gramado da praça ao anoitecer",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/04-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/04-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/praca-joao-velho/05": {
+    "dest": "pontos-turisticos/praca-joao-velho/05",
+    "alt": "Planta ornamental e flores cor-de-rosa no jardim da praça, com casas ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/05-1600.webp",
+      "width": 1600,
+      "height": 2843
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-velho/05-800.webp",
+      "width": 800,
+      "height": 1422
+    }
+  },
+  "pontos-turisticos/praca-joao-xxiii/01": {
+    "dest": "pontos-turisticos/praca-joao-xxiii/01",
+    "alt": "Canteiros de flores vermelhas e piso de pedras na Praça João XXIII",
+    "role": "cover",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/01-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/01-800.webp",
+      "width": 800,
+      "height": 450
+    },
+    "og": "/og/pontos-turisticos-praca-joao-xxiii-01.jpg"
+  },
+  "pontos-turisticos/praca-joao-xxiii/02": {
+    "dest": "pontos-turisticos/praca-joao-xxiii/02",
+    "alt": "Gramado com árvores e caminhos de cimento na Praça João XXIII",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/02-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/02-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "pontos-turisticos/praca-joao-xxiii/03": {
+    "dest": "pontos-turisticos/praca-joao-xxiii/03",
+    "alt": "Gramado e árvores da praça, com casas azuis ao fundo",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/03-1600.webp",
+      "width": 1600,
+      "height": 900
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/03-800.webp",
+      "width": 800,
+      "height": 450
+    }
+  },
+  "pontos-turisticos/praca-joao-xxiii/04": {
+    "dest": "pontos-turisticos/praca-joao-xxiii/04",
+    "alt": "Fonte da praça iluminada à noite com luzes azuis e verdes",
+    "role": "gallery",
+    "large": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/04-1600.webp",
+      "width": 720,
+      "height": 928
+    },
+    "small": {
+      "url": "/img/pontos-turisticos/praca-joao-xxiii/04-800.webp",
+      "width": 720,
+      "height": 928
+    }
+  }
+}

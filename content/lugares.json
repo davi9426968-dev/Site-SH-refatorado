@@ -1,0 +1,439 @@
+{
+  "categorias": {
+    "pontos-turisticos": {
+      "nome": "Pontos turísticos",
+      "singular": "Ponto turístico",
+      "intro": "Pontes, praças e igrejas que guardam a memória da cidade.",
+      "descricao": "Conheça os pontos turísticos de Santo Hipólito-MG: a ponte sobre o Rio das Velhas, praças, coreto e igrejas que guardam a memória da cidade.",
+      "contagem": "06 lugares"
+    },
+    "eventos": {
+      "nome": "Eventos",
+      "singular": "Evento",
+      "intro": "Música, fé, esporte e tradição ao longo de todo o ano.",
+      "descricao": "Forrozão, Desfile Cívico, Corrida de Argolinhas, quadrilha junina e futebol: os eventos que animam Santo Hipólito-MG ao longo do ano.",
+      "contagem": "07 eventos"
+    },
+    "comunidades": {
+      "nome": "Comunidades",
+      "singular": "Comunidade",
+      "intro": "Distritos e comunidades rurais que também são Santo Hipólito.",
+      "descricao": "Salobro, Água Boa, Valo Fundo, Nossa Senhora da Glória e Caquende: conheça os distritos e as comunidades rurais de Santo Hipólito-MG.",
+      "contagem": "05 comunidades"
+    },
+    "comercios": {
+      "nome": "Comércios",
+      "singular": "Comércio",
+      "intro": "Negócios locais que movimentam a cidade.",
+      "descricao": "Moda, materiais de construção, bar, varejão, padaria e lanchonete: conheça os negócios locais que movimentam Santo Hipólito-MG.",
+      "contagem": "06 negócios"
+    }
+  },
+  "lugares": [
+    {
+      "slug": "ponte-rio-das-velhas",
+      "categoria": "pontos-turisticos",
+      "titulo": "Ponte sobre o Rio das Velhas",
+      "tipo": "Rio das Velhas",
+      "resumo": "A antiga ponte metálica que une as margens do Rio das Velhas e aproxima as comunidades de Santo Hipólito.",
+      "descricao": "Conheça a antiga ponte metálica sobre o Rio das Velhas, em Santo Hipólito-MG: travessia que une margens e comunidades e convida a contemplar o rio.",
+      "lead": "Mais do que uma travessia, a antiga ponte de estrutura metálica é um marco querido de Santo Hipólito. Ela liga as margens do Rio das Velhas e, com elas, pessoas, famílias e histórias.",
+      "paragrafos": [
+        "Com imponência discreta, a estrutura metálica cumpre um papel essencial: unir caminhos e destinos. Cada travessia lembra que as ligações mais importantes são as que aproximam as pessoas.",
+        "Do alto da ponte, a vista se abre para o Rio das Velhas. É um convite para desacelerar, contemplar o rio e apreciar a paisagem ao redor."
+      ],
+      "chips": ["Rio das Velhas", "Estrutura metálica", "Vista para o rio"],
+      "info": [
+        { "icone": "waves", "rotulo": "Rio", "valor": "Rio das Velhas" }
+      ]
+    },
+    {
+      "slug": "praca-joao-xxiii",
+      "categoria": "pontos-turisticos",
+      "titulo": "Praça João XXIII",
+      "tipo": "Praça",
+      "resumo": "Cartão-postal da cidade, a praça foi revitalizada e virou um espaço moderno e multifuncional, com fonte.",
+      "descricao": "A Praça João XXIII é um dos principais cartões-postais de Santo Hipólito-MG: revitalizada, moderna, multifuncional e com uma fonte.",
+      "lead": "Um dos principais cartões-postais de Santo Hipólito, a Praça João XXIII ganhou nova vida com uma revitalização recente. O resultado é um espaço moderno e multifuncional, aberto à convivência.",
+      "paragrafos": [
+        "A praça acolhe moradores e visitantes para uma pausa, uma conversa ou um passeio sem pressa. Ali, o lazer faz parte da rotina de quem vive na cidade.",
+        "A fonte completa o cenário e rende boas fotos. Vale incluir a praça no roteiro de quem quer conhecer Santo Hipólito com calma."
+      ],
+      "chips": ["Cartão-postal", "Revitalizada", "Fonte"],
+      "info": []
+    },
+    {
+      "slug": "capela-nossa-senhora-das-dores",
+      "categoria": "pontos-turisticos",
+      "titulo": "Capela Nossa Senhora das Dores",
+      "tipo": "Igreja",
+      "resumo": "Ligada às origens de Santo Hipólito, a capela reúne os fiéis em missas aos domingos, às 8h.",
+      "descricao": "Capela Nossa Senhora das Dores, em Santo Hipólito-MG: ligada às origens da cidade, com missas aos domingos, às 8h.",
+      "lead": "A história de Santo Hipólito começa em uma fazenda com uma capela. A Capela Nossa Senhora das Dores mantém viva essa ligação entre a fé e as origens da cidade.",
+      "paragrafos": [
+        "Em 1910, os irmãos Moreira construíram uma nova capela em um terreno doado para esse fim. É um capítulo importante da memória religiosa do município.",
+        "As missas são celebradas aos domingos, às 8h. Para quem visita, é uma oportunidade de conhecer um espaço de oração com raízes na história local."
+      ],
+      "chips": ["Missas aos domingos, 8h", "Origem da cidade", "Nova capela em 1910"],
+      "info": [
+        { "icone": "clock", "rotulo": "Missas", "valor": "Domingos, às 8h" },
+        { "icone": "calendar", "rotulo": "Nova capela", "valor": "1910, construída pelos irmãos Moreira" }
+      ]
+    },
+    {
+      "slug": "igreja-matriz",
+      "categoria": "pontos-turisticos",
+      "titulo": "Igreja Matriz de Santo Hipólito",
+      "tipo": "Igreja",
+      "resumo": "Principal templo católico da cidade, no Centro, com traços das igrejas mineiras e missas aos domingos, às 19h.",
+      "descricao": "Igreja Matriz de Santo Hipólito-MG, na Rua Thieres Moreira, no Centro: o principal templo católico da cidade, com missas aos domingos, às 19h.",
+      "lead": "No Centro de Santo Hipólito, na Rua Thieres Moreira, fica o principal templo católico da cidade. Com papel religioso e histórico, a Igreja Matriz é ponto de referência para toda a comunidade.",
+      "paragrafos": [
+        "A construção conserva elementos tradicionais das igrejas mineiras e reflete a importância da fé e da simbologia religiosa na vida local.",
+        "As missas acontecem aos domingos, às 19h. Por estar no Centro, a Matriz também é um bom ponto de partida para conhecer a cidade a pé."
+      ],
+      "chips": ["Missas aos domingos, 19h", "Centro", "Tradição mineira"],
+      "info": [
+        { "icone": "map-pin", "rotulo": "Endereço", "valor": "Rua Thieres Moreira, Centro" },
+        { "icone": "clock", "rotulo": "Missas", "valor": "Domingos, às 19h" }
+      ]
+    },
+    {
+      "slug": "praca-joao-velho",
+      "categoria": "pontos-turisticos",
+      "titulo": "Praça João Velho",
+      "tipo": "Praça",
+      "resumo": "No núcleo urbano da cidade, a praça é ponto de encontro e recebe atividades públicas do município.",
+      "descricao": "A Praça João Velho fica no núcleo urbano de Santo Hipólito-MG: ponto de encontro dos moradores e palco de atividades públicas municipais.",
+      "lead": "Bem no núcleo urbano de Santo Hipólito, a Praça João Velho tem acesso fácil para quem vive na sede e nos arredores. É um ponto de encontro natural no dia a dia da cidade.",
+      "paragrafos": [
+        "A localização central faz da praça um lugar de passagem, de conversa e de encontro entre vizinhos.",
+        "Pela mesma razão, ela costuma ser escolhida para atividades públicas municipais, o que reforça seu papel na vida social de Santo Hipólito."
+      ],
+      "chips": ["Núcleo urbano", "Ponto de encontro", "Atividades públicas"],
+      "info": [
+        { "icone": "map-pin", "rotulo": "Localização", "valor": "Núcleo urbano de Santo Hipólito" }
+      ]
+    },
+    {
+      "slug": "coreto",
+      "categoria": "pontos-turisticos",
+      "titulo": "Coreto",
+      "tipo": "Praça",
+      "resumo": "A joia da praça: um coreto que guarda a tradição da música e dos encontros e virou cartão-postal da cidade.",
+      "descricao": "O Coreto de Santo Hipólito-MG é a joia da praça e um cartão-postal da cidade, ligado à tradição da música e dos encontros.",
+      "lead": "Em meio à tranquilidade da praça, o coreto é a joia central e um convite à convivência. Ali, música, conversa e contemplação dividem o mesmo espaço.",
+      "paragrafos": [
+        "A construção traz um ar de nostalgia e lembra os tempos em que a cidade se reunia para ouvir música e trocar histórias. É um símbolo de cultura, encontro e alegria.",
+        "Junto com a praça, o coreto forma um dos cartões-postais de Santo Hipólito. É um cenário encantador para fotos e para um fim de tarde tranquilo."
+      ],
+      "chips": ["Cartão-postal", "Música e encontros", "Joia da praça"],
+      "info": []
+    },
+    {
+      "slug": "forrozao",
+      "categoria": "eventos",
+      "titulo": "Forrozão",
+      "tipo": "Música",
+      "resumo": "Festa anual da prefeitura, com entrada franca e atrações musicais que animam a cidade e movimentam a economia local.",
+      "descricao": "O Forrozão de Santo Hipólito-MG é uma festa anual realizada pela prefeitura, com entrada franca, tradição e atrações musicais.",
+      "lead": "Todo ano, o Forrozão reúne moradores e visitantes em uma festa de música e tradição. O evento é realizado pela prefeitura e tem entrada franca.",
+      "paragrafos": [
+        "A programação traz atrações musicais em um clima de celebração aberto a todos. É tempo de dançar, reencontrar amigos e aproveitar a festa.",
+        "Além de animar a cidade, o Forrozão movimenta a economia local e fortalece a cultura do município."
+      ],
+      "chips": ["Entrada franca", "Evento anual", "Atrações musicais"],
+      "info": [
+        { "icone": "calendar", "rotulo": "Frequência", "valor": "Anual" },
+        { "icone": "ticket", "rotulo": "Entrada", "valor": "Franca" }
+      ]
+    },
+    {
+      "slug": "desfile-civico",
+      "categoria": "eventos",
+      "titulo": "Desfile Cívico de 7 de Setembro",
+      "tipo": "Cívico",
+      "resumo": "Escolas, bandas, fanfarras e a comunidade tomam as ruas para celebrar a Independência do Brasil.",
+      "descricao": "No 7 de setembro, Santo Hipólito-MG celebra a Independência com o desfile de escolas, bandas, fanfarras, entidades e comunidade.",
+      "lead": "No dia 7 de setembro, Santo Hipólito celebra a Independência do Brasil com um desfile cívico pelas ruas da cidade. A tradição reúne a comunidade em uma demonstração de civismo e orgulho local.",
+      "paragrafos": [
+        "Escolas, bandas e fanfarras, entidades locais e moradores marcham juntos. Cada grupo leva às ruas o espírito de participação que marca a data.",
+        "O Desfile Cívico consta no calendário de eventos turísticos de Minas Gerais. É uma boa ocasião para visitar Santo Hipólito em clima de festa cívica."
+      ],
+      "chips": ["7 de setembro", "Independência do Brasil", "Calendário turístico de MG"],
+      "info": [
+        { "icone": "calendar", "rotulo": "Data", "valor": "7 de setembro" },
+        { "icone": "users", "rotulo": "Participantes", "valor": "Escolas, bandas, fanfarras, entidades e comunidade" }
+      ]
+    },
+    {
+      "slug": "corrida-de-argolinhas",
+      "categoria": "eventos",
+      "titulo": "Corrida de Argolinhas",
+      "tipo": "Tradição",
+      "resumo": "Tradição de origem medieval: a cavalo, cada cavaleiro tenta tirar a argola com a lança. Vence quem tirar mais.",
+      "descricao": "Corrida de Argolinhas em Santo Hipólito-MG: tradição de origem medieval em que cavaleiros, de lança em punho, disputam quem tira mais argolas.",
+      "lead": "Herança de origem medieval, a Corrida de Argolinhas segue viva em Santo Hipólito. A cavalo, cada cavaleiro tenta tirar uma pequena argola com a lança.",
+      "paragrafos": [
+        "A disputa pede habilidade e precisão. O objetivo não é chegar primeiro: vence quem tirar o maior número de argolas.",
+        "Em Minas Gerais, a tradição também é praticada em cidades como Claro dos Poções e Frei Gaspar. Em Santo Hipólito, a corrida é a chance de ver de perto essa herança da cultura popular."
+      ],
+      "chips": ["Origem medieval", "A cavalo", "Vence quem tira mais argolas"],
+      "info": []
+    },
+    {
+      "slug": "quadrilha-dos-amigos",
+      "categoria": "eventos",
+      "titulo": "Quadrilha dos Amigos",
+      "tipo": "Festa junina",
+      "resumo": "No Arraiá dos Amigos, a quadrilha tradicional toma conta da praça, com canjica, quentão e muita animação.",
+      "descricao": "No Arraiá dos Amigos, em Santo Hipólito-MG, a Quadrilha dos Amigos leva a dança tradicional à praça, com canjica e quentão.",
+      "lead": "No Arraiá dos Amigos, festa junina realizada em Santo Hipólito, a praça se transforma em um pedaço de tradição. É ali que a Quadrilha dos Amigos se apresenta, com a dança tradicional das festas juninas.",
+      "paragrafos": [
+        "Cores vibrantes, passos animados e o cheiro de canjica e quentão no ar dão o tom da festa. A energia dos participantes contagia quem assiste.",
+        "Por trás da apresentação estão a união e a dedicação de cada participante. É um momento para a comunidade se reunir, dançar e fortalecer os laços."
+      ],
+      "chips": ["Arraiá dos Amigos", "Na praça", "Canjica e quentão"],
+      "info": [
+        { "icone": "map-pin", "rotulo": "Local", "valor": "Praça da cidade" },
+        { "icone": "star", "rotulo": "Festa", "valor": "Arraiá dos Amigos" }
+      ]
+    },
+    {
+      "slug": "campeonato-regional",
+      "categoria": "eventos",
+      "titulo": "Campeonato Regional de Futebol",
+      "tipo": "Esporte",
+      "resumo": "Futebol que aproxima cidades da região, com partidas marcadas pela união, pela garra e pelo espírito esportivo.",
+      "descricao": "O Campeonato Regional de Futebol de Santo Hipólito-MG reúne cidades da região em partidas de união e espírito esportivo.",
+      "lead": "O Campeonato Regional de Futebol vai além da disputa: é um encontro entre cidades da região. Em campo, o que se vê é união, garra e talento.",
+      "paragrafos": [
+        "Jogadores, torcedores e organizadores fazem de cada partida um momento de emoção e amizade. A paixão pelo esporte vai muito além do placar.",
+        "O campeonato mostra que o futebol também aproxima cidades, famílias e gerações. Cada gol, cada defesa e cada aplauso confirmam o espírito esportivo que move a competição."
+      ],
+      "chips": ["Futebol", "Cidades da região", "Espírito esportivo"],
+      "info": [
+        { "icone": "users", "rotulo": "Participantes", "valor": "Cidades da região" }
+      ]
+    },
+    {
+      "slug": "campeonato-de-bairros",
+      "categoria": "eventos",
+      "titulo": "Campeonato de Bairros",
+      "tipo": "Esporte",
+      "resumo": "Futebol entre bairros que desperta o orgulho local e incentiva a juventude de Santo Hipólito.",
+      "descricao": "No Campeonato de Bairros de Santo Hipólito-MG, o futebol desperta o orgulho de cada bairro e incentiva a juventude da cidade.",
+      "lead": "No Campeonato de Bairros, o futebol vira motivo de orgulho para cada bairro de Santo Hipólito. Cada jogo é uma celebração de união, amizade e paixão pela bola.",
+      "paragrafos": [
+        "Mais do que gols e troféus, o campeonato representa a força da comunidade. Torcedores e atletas transformam partidas simples em momentos marcantes.",
+        "A competição também incentiva a juventude e mantém viva a tradição do futebol de bairro. Quando a bola rola, o coração da cidade bate mais forte."
+      ],
+      "chips": ["Futebol", "Orgulho de cada bairro", "Juventude"],
+      "info": []
+    },
+    {
+      "slug": "encontro-dos-cachaceiros",
+      "categoria": "eventos",
+      "titulo": "Encontro dos Cachaceiros",
+      "tipo": "Confraternização",
+      "resumo": "Confraternização que reúne moradores em clima descontraído. A 10ª edição foi realizada em dezembro de 2018.",
+      "descricao": "O Encontro dos Cachaceiros é uma confraternização de moradores de Santo Hipólito-MG; a 10ª edição foi realizada em dezembro de 2018.",
+      "lead": "Amizade, boa conversa e clima descontraído marcam o Encontro dos Cachaceiros. A confraternização reúne moradores de Santo Hipólito e celebra a cultura local.",
+      "paragrafos": [
+        "O encontro já teve várias edições. A décima delas foi realizada em dezembro de 2018 e divulgada pela página local “SH City”.",
+        "É uma festa que mostra o lado mais leve da cidade: gente conhecida, risadas e o prazer de estar junto."
+      ],
+      "chips": ["Confraternização", "Moradores", "10ª edição em 2018"],
+      "info": [
+        { "icone": "calendar", "rotulo": "10ª edição", "valor": "Dezembro de 2018" }
+      ]
+    },
+    {
+      "slug": "salobro",
+      "categoria": "comunidades",
+      "titulo": "Salobro",
+      "tipo": "Comunidade rural",
+      "resumo": "Comunidade rural de cerca de 200 habitantes, com agricultura, pecuária e uma história ligada à estrada de ferro.",
+      "descricao": "Salobro é uma comunidade rural de Santo Hipólito-MG, com cerca de 200 habitantes, agricultura, pecuária e história ligada à estrada de ferro.",
+      "lead": "Na zona rural de Santo Hipólito, Salobro guarda o ritmo tranquilo do campo. A comunidade tem cerca de 200 habitantes e forte presença da agricultura e da pecuária.",
+      "paragrafos": [
+        "A história de Salobro está ligada à chegada da estrada de ferro. Hoje, o trabalho na terra segue no centro da vida local.",
+        "Visitar Salobro é conhecer de perto o lado rural de Santo Hipólito, com suas paisagens e o cotidiano do campo."
+      ],
+      "chips": ["Zona rural", "Cerca de 200 habitantes", "Agricultura e pecuária"],
+      "info": [
+        { "icone": "users", "rotulo": "População", "valor": "Cerca de 200 habitantes" },
+        { "icone": "leaf", "rotulo": "Economia", "valor": "Agricultura e pecuária" }
+      ]
+    },
+    {
+      "slug": "agua-boa",
+      "categoria": "comunidades",
+      "titulo": "Água Boa",
+      "tipo": "Comunidade rural",
+      "resumo": "No Cerrado mineiro, uma comunidade de cerca de 200 habitantes, com diversidade cultural e organização ativa.",
+      "descricao": "Água Boa é uma comunidade de Santo Hipólito-MG no bioma Cerrado, com cerca de 200 habitantes e organização comunitária ativa.",
+      "lead": "Inserida no bioma Cerrado, Água Boa é uma comunidade de Santo Hipólito com cerca de 200 habitantes. O lugar reflete a diversidade cultural e a presença indígena histórica na região.",
+      "paragrafos": [
+        "A organização comunitária ativa é uma das marcas de Água Boa e mostra a força de quem vive e trabalha junto.",
+        "Entre a paisagem do Cerrado e a herança de diferentes culturas, Água Boa é um retrato da diversidade que forma Santo Hipólito."
+      ],
+      "chips": ["Cerrado", "Cerca de 200 habitantes", "Organização comunitária"],
+      "info": [
+        { "icone": "users", "rotulo": "População", "valor": "Cerca de 200 habitantes" },
+        { "icone": "leaf", "rotulo": "Bioma", "valor": "Cerrado" }
+      ]
+    },
+    {
+      "slug": "valo-fundo",
+      "categoria": "comunidades",
+      "titulo": "Valo Fundo",
+      "tipo": "Distrito",
+      "resumo": "Distrito rural de 136 habitantes, no Circuito Guimarães Rosa, com uma Área de Proteção Ambiental que leva o seu nome.",
+      "descricao": "Valo Fundo é um distrito rural de Santo Hipólito-MG, no Circuito Guimarães Rosa, com 136 habitantes e uma APA que leva o seu nome.",
+      "lead": "A natureza é o grande destaque de Valo Fundo, distrito rural de Santo Hipólito. A região faz parte do Circuito Guimarães Rosa e tem uma Área de Proteção Ambiental (APA) que leva o seu nome.",
+      "paragrafos": [
+        "Com 136 habitantes, o distrito ocupa 60,43 km², o equivalente a 13,96% do território do município.",
+        "A lei de criação do distrito é a Lei Estadual nº 2.764, de 30 de dezembro de 1962. Valo Fundo merece um lugar no roteiro de quem aprecia paisagens naturais."
+      ],
+      "chips": ["Circuito Guimarães Rosa", "Área de Proteção Ambiental", "136 habitantes"],
+      "info": [
+        { "icone": "users", "rotulo": "População", "valor": "136 habitantes" },
+        { "icone": "map-pin", "rotulo": "Área", "valor": "60,43 km² (13,96% do território)" },
+        { "icone": "leaf", "rotulo": "Proteção ambiental", "valor": "APA que leva o nome do distrito" },
+        { "icone": "calendar", "rotulo": "Criação", "valor": "Lei Estadual nº 2.764, de 30/12/1962" }
+      ]
+    },
+    {
+      "slug": "senhora-da-gloria",
+      "categoria": "comunidades",
+      "titulo": "Nossa Senhora da Glória",
+      "tipo": "Distrito",
+      "resumo": "Distrito rural que já se chamou Piçarrão e ganhou o nome atual em 1943. Antes de integrar Santo Hipólito, pertencia a Corinto.",
+      "descricao": "Nossa Senhora da Glória é um distrito rural de Santo Hipólito-MG, o antigo Piçarrão, com nome dado por decreto-lei estadual de 1943.",
+      "lead": "Antes de ganhar o nome atual, Nossa Senhora da Glória era conhecida como “Piçarrão” ou “Bom Jesus do Piçarrão”. Hoje, é um dos distritos rurais de Santo Hipólito.",
+      "paragrafos": [
+        "O nome Nossa Senhora da Glória foi dado por um decreto-lei estadual de 1943. A mudança ficou registrada na história do distrito.",
+        "Antes de fazer parte de Santo Hipólito, o distrito pertencia ao município de Corinto. Essa trajetória ajuda a entender a formação da cidade e de suas comunidades."
+      ],
+      "chips": ["Distrito rural", "Antigo Piçarrão", "Nome desde 1943"],
+      "info": [
+        { "icone": "star", "rotulo": "Nomes antigos", "valor": "Piçarrão ou Bom Jesus do Piçarrão" },
+        { "icone": "calendar", "rotulo": "Nome atual", "valor": "Decreto-lei estadual de 1943" },
+        { "icone": "map-pin", "rotulo": "Pertencia a", "valor": "Município de Corinto" }
+      ]
+    },
+    {
+      "slug": "caquende",
+      "categoria": "comunidades",
+      "titulo": "Caquende",
+      "tipo": "Comunidade rural",
+      "resumo": "Pequena comunidade de gente humilde e cooperativa, onde cultura, fé e companheirismo fazem parte do dia a dia.",
+      "descricao": "Caquende é uma pequena comunidade de Santo Hipólito-MG, de gente humilde e cooperativa, que mantém vivos a cultura, a fé e o companheirismo.",
+      "lead": "Caquende é uma pequena comunidade de Santo Hipólito, formada por uma população humilde e cooperativa. Cada morador contribui com dedicação e alegria para manter viva a cultura local.",
+      "paragrafos": [
+        "A fé e o companheirismo estão presentes na rotina da comunidade. São esses laços que fazem de Caquende um lugar especial dentro do município.",
+        "Conhecer Caquende é encontrar o jeito simples e acolhedor das pequenas comunidades mineiras."
+      ],
+      "chips": ["Pequena comunidade", "Cultura e fé", "Companheirismo"],
+      "info": []
+    },
+    {
+      "slug": "ma-fitness",
+      "categoria": "comercios",
+      "titulo": "MA Fitness",
+      "tipo": "Moda fitness",
+      "resumo": "Loja de moda fitness que une qualidade e bom atendimento, com foco em saúde e bem-estar.",
+      "descricao": "MA Fitness, loja de moda fitness em Santo Hipólito-MG, com produtos de qualidade e atendimento atento para quem busca bem-estar.",
+      "lead": "Para quem cuida da saúde e do bem-estar, a MA Fitness é uma loja de moda fitness que vale conhecer. Ali, qualidade e atendimento caminham juntos.",
+      "paragrafos": [
+        "Os produtos acompanham quem leva a sério um estilo de vida saudável, unindo desempenho e estilo.",
+        "O atendimento atento ajuda cada cliente a encontrar o que procura, seja para treinar, seja para o dia a dia. É uma parceira de quem busca o melhor de si."
+      ],
+      "chips": ["Moda fitness", "Qualidade", "Bom atendimento"],
+      "info": []
+    },
+    {
+      "slug": "imperio-store",
+      "categoria": "comercios",
+      "titulo": "Império Store",
+      "tipo": "Moda",
+      "resumo": "Moda com personalidade, tendências e um atendimento atencioso que valoriza cada cliente.",
+      "descricao": "Império Store, loja de moda em Santo Hipólito-MG, reúne tendências e um atendimento atencioso para quem gosta de se vestir bem.",
+      "lead": "Na Império Store, a moda vem acompanhada de um atendimento atencioso. A loja traz tendências para quem gosta de se vestir bem e expressar o próprio estilo.",
+      "paragrafos": [
+        "Com um toque moderno e cheio de personalidade, a seleção de peças acompanha as tendências da moda.",
+        "Confiança, elegância e cuidado marcam a relação com os clientes. É um bom endereço para renovar o guarda-roupa sem sair da cidade."
+      ],
+      "chips": ["Moda", "Tendências", "Atendimento atencioso"],
+      "info": []
+    },
+    {
+      "slug": "deposito-pereira",
+      "categoria": "comercios",
+      "titulo": "Depósito Pereira",
+      "tipo": "Materiais de construção",
+      "resumo": "Cimento, areia, brita, blocos, tintas e ferramentas no Bairro Santa Rita, com entrega rápida para a sua obra.",
+      "descricao": "Depósito Pereira, no Bairro Santa Rita, em Santo Hipólito-MG: cimento, areia, brita, blocos, tintas e ferramentas, com entrega rápida.",
+      "lead": "Quem está construindo ou reformando encontra no Depósito Pereira, no Bairro Santa Rita, os materiais para a obra. O atendimento é próximo e a entrega, rápida.",
+      "paragrafos": [
+        "Cimento, areia, brita, blocos, tintas e ferramentas estão entre os materiais à disposição, ao lado de outros insumos para diferentes tipos de obra.",
+        "Profissionais da construção civil e clientes particulares são recebidos com o mesmo cuidado: atendimento personalizado e agilidade para manter cada obra em dia."
+      ],
+      "chips": ["Materiais de construção", "Entrega rápida", "Bairro Santa Rita"],
+      "info": [
+        { "icone": "map-pin", "rotulo": "Endereço", "valor": "Rua Raimundo da Glória Caldeira, 80, Bairro Santa Rita, CEP 39210-000" }
+      ],
+      "endereco": {
+        "logradouro": "Rua Raimundo da Glória Caldeira, 80",
+        "bairro": "Santa Rita",
+        "cep": "39210-000"
+      }
+    },
+    {
+      "slug": "bar-da-nega",
+      "categoria": "comercios",
+      "titulo": "Bar da Nega",
+      "tipo": "Bar",
+      "resumo": "Boa comida, bebida gelada e clima de amizade em um ponto de encontro para reunir os amigos.",
+      "descricao": "Bar da Nega, em Santo Hipólito-MG: boa comida, bebida gelada e clima de amizade em um ponto de encontro para celebrar com os amigos.",
+      "lead": "No Bar da Nega, a mesa reúne comida boa, bebida gelada e aquele clima de amizade dos bares do interior. É um ponto de encontro para rever os amigos e celebrar os bons momentos.",
+      "paragrafos": [
+        "O atendimento acolhedor faz cada visitante se sentir em casa, seja para comer, seja para uma conversa demorada.",
+        "Descontração, simpatia e tradição definem o lugar. Para quem quer conhecer a vida social da cidade, é uma boa pedida."
+      ],
+      "chips": ["Comida", "Bebida gelada", "Ponto de encontro"],
+      "info": []
+    },
+    {
+      "slug": "varejao-mg",
+      "categoria": "comercios",
+      "titulo": "Varejão MG",
+      "tipo": "Varejão",
+      "resumo": "Produtos frescos e atendimento próximo, com o jeito acolhedor do comércio do interior.",
+      "descricao": "Varejão MG, em Santo Hipólito-MG: produtos frescos e o atendimento acolhedor de um comércio de proximidade que valoriza o trabalho local.",
+      "lead": "O Varejão MG mantém viva a essência do comércio de proximidade. Produtos frescos e um atendimento acolhedor fazem parte da rotina de quem compra ali.",
+      "paragrafos": [
+        "Cada cliente é recebido com simpatia e respeito, e cada produto reflete o cuidado de quem valoriza o trabalho local.",
+        "No Varejão, o sorriso vale tanto quanto a compra, e cada visita fortalece a relação de confiança com a clientela."
+      ],
+      "chips": ["Produtos frescos", "Comércio de proximidade"],
+      "info": []
+    },
+    {
+      "slug": "padaria-jr",
+      "categoria": "comercios",
+      "titulo": "Padaria e Lanchonete JR",
+      "tipo": "Padaria e lanchonete",
+      "resumo": "Pães frescos para o café da manhã e o lanche da tarde, servidos com atendimento acolhedor.",
+      "descricao": "Padaria e Lanchonete JR, em Santo Hipólito-MG: pães frescos, café da manhã, lanche da tarde e um atendimento acolhedor.",
+      "lead": "Muito mais que um lugar para comprar pão, a Padaria e Lanchonete JR tem aroma de tradição e sabor de casa. Os pães frescos acompanham o café da manhã e o lanche da tarde.",
+      "paragrafos": [
+        "O atendimento acolhedor e o capricho de quem trabalha ali transformam cada visita em um momento agradável.",
+        "Qualidade, carinho e simpatia andam juntos no balcão. Cada cliente sai com algo gostoso na mão e um sorriso no rosto."
+      ],
+      "chips": ["Pães frescos", "Café da manhã", "Lanche da tarde"],
+      "info": []
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "santo-hipolito",
+  "version": "1.0.0",
+  "description": "Site de Santo Hipólito, Minas Gerais",
+  "engines": { "node": ">=20.19" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "check": "node scripts/check-site.mjs dist",
+    "shots": "node scripts/screenshots.mjs",
+    "keyboard": "node scripts/keyboard-check.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "video": "node scripts/compress-video.mjs",
+    "sheets": "node scripts/contact-sheets.mjs",
+    "scaffold": "node scripts/scaffold-pages.mjs"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
+    "gsap": "^3.15.1",
+    "lenis": "^1.3.27",
+    "vite": "^8.3.7"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "happy-dom": "^21.0.4",
+    "html-validate": "^11.21.0",
+    "playwright-core": "^1.65.0",
+    "sharp": "^0.35.5",
+    "vitest": "^5.1.0"
+  }
+}

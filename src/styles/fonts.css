@@ -1,0 +1,10 @@
+/*
+ * Poppins 400–800 só no subset latin; Fraunces Variable só no itálico (eixo wght), usada em em.accent.
+ * Todas com font-display: swap (vem do Fontsource). O head.html faz o preload da Poppins 800.
+ */
+@import '@fontsource/poppins/latin-400.css' layer(fonts);
+@import '@fontsource/poppins/latin-500.css' layer(fonts);
+@import '@fontsource/poppins/latin-600.css' layer(fonts);
+@import '@fontsource/poppins/latin-700.css' layer(fonts);
+@import '@fontsource/poppins/latin-800.css' layer(fonts);
+@import '@fontsource-variable/fraunces/wght-italic.css' layer(fonts);

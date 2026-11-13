@@ -1,0 +1,182 @@
+@layer base {
+  html {
+    color-scheme: light;
+    background: var(--cream-100);
+    color: var(--ink-900);
+    font-family: var(--font-sans);
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+
+  body {
+    min-height: 100svh;
+    background: var(--cream-100);
+    color: var(--text);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-strong);
+    font-weight: 800;
+    letter-spacing: var(--tracking-title);
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  h1 { font-size: var(--fs-display); line-height: .96; }
+  h2 { font-size: var(--fs-h2); line-height: .98; }
+  h3 { font-size: var(--fs-h3); line-height: 1.1; letter-spacing: -0.03em; }
+  h4, h5, h6 { font-size: 1.125rem; line-height: 1.2; letter-spacing: -0.02em; }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+  }
+
+  strong, b {
+    font-weight: 700;
+  }
+
+  /* Palavra de destaque: Fraunces itálico, sem o tracking negativo dos títulos. */
+  em.accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--accent-text);
+    padding-inline-end: .04em;
+  }
+
+  ::selection {
+    background: var(--gold-300);
+    color: var(--ink-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+
+  /* Aparece sobre o topo da página: o anel segue o tema do header (creme sobre hero escuro). */
+  .skip-link {
+    --focus-ring: var(--header-focus, var(--gold-700));
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 10000;
+    padding: 12px 20px;
+    border-radius: var(--r-pill);
+    background: var(--green-800);
+    color: var(--cream-100);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    text-decoration: none;
+    transform: translateY(calc(-100% - 24px));
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: none;
+  }
+
+  /* Barra de rolagem fina: verde, dourada no hover. Firefox usa as propriedades padrão. */
+  html::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, var(--cream-50), var(--cream-200));
+    border-left: 1px solid var(--line);
+  }
+
+  html::-webkit-scrollbar-thumb {
+    border: 2px solid var(--cream-100);
+    border-radius: var(--r-pill);
+    background: linear-gradient(180deg, var(--green-700), var(--green-800));
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--gold-500), var(--gold-700));
+  }
+
+  html::-webkit-scrollbar-corner {
+    background: var(--cream-100);
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--green-800) var(--cream-200);
+    }
+  }
+
+  /* Grão estático sobre a página inteira. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    pointer-events: none;
+    /* Nasce invisível e entra depois de 1,2 s: rasterizar o feTurbulence antes disso atrasava o primeiro quadro (LCP). */
+    opacity: 0;
+    animation: grain-in .4s 1.2s forwards;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  @keyframes grain-in {
+    to { opacity: .06; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root) {
+      animation: vt-out var(--dur-fast) ease-in both;
+    }
+
+    ::view-transition-new(root) {
+      animation: vt-in var(--dur-base) var(--ease-out) both;
+    }
+
+    @keyframes vt-out {
+      to { opacity: 0; transform: translateY(-8px); }
+    }
+
+    @keyframes vt-in {
+      from { opacity: 0; transform: translateY(14px); }
+    }
+  }
+
+  /* Cursor próprio (ui/cursor.js): o nativo some, menos em campos de texto.
+   * !important para vencer o cursor: pointer de qualquer camada (botões, links, seções). */
+  html.has-cursor *:not(input, textarea, select) {
+    cursor: none !important;
+  }
+
+  /* O lightbox (dialog na camada de topo) cobre o cursor próprio: nele volta o cursor nativo, e o próprio some. */
+  html.has-cursor .lightbox,
+  html.has-cursor .lightbox * {
+    cursor: auto !important;
+  }
+
+  html.has-cursor .lightbox button {
+    cursor: pointer !important;
+  }
+
+  html:has(dialog.lightbox[open]) :is(.cursor-dot, .cursor-ring) {
+    opacity: 0 !important;
+  }
+}

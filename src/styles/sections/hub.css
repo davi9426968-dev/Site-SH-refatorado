@@ -1,0 +1,138 @@
+@layer sections {
+  /* ───── Página de categoria (spec §7.2) ─────
+   * Hero creme (~80vh): trilha, etiqueta, o nome gigante atrás da foto em arco flutuante,
+   * e embaixo o h1, a introdução e o chip com a contagem. Fundo claro: o header usa
+   * data-header-theme="light" e o anel de foco fica no padrão (--gold-700).
+   */
+  .hub-hero {
+    position: relative;
+    display: grid;
+    align-content: center;
+    min-height: 80svh;
+    padding-block: calc(var(--header-h) + clamp(12px, 2vw, 24px)) clamp(48px, 6vw, 80px);
+    overflow: hidden;
+    isolation: isolate;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 42%, rgb(227 167 47 / .16), transparent 70%),
+      linear-gradient(165deg, var(--cream-50) 0%, var(--cream-100) 45%, var(--cream-200) 82%, var(--green-100) 130%);
+  }
+
+  .hub-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(12px, 1.6vw, 18px);
+  }
+
+  .hub-hero__eyebrow {
+    justify-self: start;
+  }
+
+  /* Palavra e arco na mesma célula: o arco fica por cima, no centro. */
+  .hub-hero__stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: center;
+    margin-block: clamp(4px, 1.5vw, 16px);
+  }
+
+  .hub-hero__stage > * {
+    grid-area: 1 / 1;
+  }
+
+  /* fx/fit-text ajusta a fonte a 92% da largura do palco; o tamanho abaixo é só o de partida
+   * (sem JS, o que sobra fica cortado pelo overflow do hero). */
+  .hub-hero__word {
+    width: max-content;
+    padding-bottom: .04em;
+    background: linear-gradient(180deg, var(--green-800) 30%, rgb(18 63 46 / .16) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(3rem, 13vw, 13rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: .9;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  /* Largura igual ao sizes do arco em templates.mjs (ARCH_SIZES). */
+  .hub-hero__arch {
+    position: relative;
+    z-index: 1;
+    width: min(64vw, 340px);
+    aspect-ratio: 3 / 4;
+    border: 6px solid var(--cream-50);
+    box-shadow: 0 30px 70px rgb(18 63 46 / .22), var(--glow-gold);
+  }
+
+  /* Estreito: o arco cobriria quase a palavra toda; ela sobe e aparece por cima da curva do arco,
+   * mais clara, para não parecer um segundo título do tamanho do h1. */
+  @media (max-width: 899px) {
+    .hub-hero__word {
+      align-self: start;
+      background-image: linear-gradient(180deg, rgb(18 63 46 / .5) 20%, rgb(18 63 46 / .08) 100%);
+    }
+
+    .hub-hero__arch {
+      margin-top: clamp(40px, 12vw, 96px);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hub-hero__arch {
+      animation: hub-float 7s ease-in-out infinite;
+    }
+  }
+
+  @keyframes hub-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -14px; }
+  }
+
+  .hub-hero__foot {
+    display: grid;
+    justify-items: start;
+    gap: 14px;
+  }
+
+  .hub-hero__title {
+    font-size: var(--fs-h2);
+    overflow-wrap: anywhere;
+  }
+
+  .hub-hero__intro {
+    max-width: 30ch;
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.55;
+  }
+
+  @media (min-width: 900px) {
+    .hub-hero__foot {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-areas:
+        "title intro"
+        "title count";
+      align-items: end;
+      column-gap: clamp(32px, 5vw, 80px);
+    }
+
+    .hub-hero__title {
+      grid-area: title;
+    }
+
+    .hub-hero__intro {
+      grid-area: intro;
+      justify-self: end;
+      text-align: right;
+    }
+
+    .hub-hero__count {
+      grid-area: count;
+      justify-self: end;
+    }
+  }
+}

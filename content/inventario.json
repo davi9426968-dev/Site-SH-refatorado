@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "ponte-rio-das-velhas",
+    "categoria": "pontos-turisticos",
+    "titulo": "Ponte sobre o Rio das Velhas"
+  },
+  {
+    "slug": "praca-joao-xxiii",
+    "categoria": "pontos-turisticos",
+    "titulo": "Praça João XXIII"
+  },
+  {
+    "slug": "capela-nossa-senhora-das-dores",
+    "categoria": "pontos-turisticos",
+    "titulo": "Capela Nossa Senhora das Dores"
+  },
+  {
+    "slug": "igreja-matriz",
+    "categoria": "pontos-turisticos",
+    "titulo": "Igreja Matriz de Santo Hipólito"
+  },
+  {
+    "slug": "praca-joao-velho",
+    "categoria": "pontos-turisticos",
+    "titulo": "Praça João Velho"
+  },
+  {
+    "slug": "coreto",
+    "categoria": "pontos-turisticos",
+    "titulo": "Coreto"
+  },
+  {
+    "slug": "forrozao",
+    "categoria": "eventos",
+    "titulo": "Forrozão"
+  },
+  {
+    "slug": "desfile-civico",
+    "categoria": "eventos",
+    "titulo": "Desfile Cívico de 7 de Setembro"
+  },
+  {
+    "slug": "corrida-de-argolinhas",
+    "categoria": "eventos",
+    "titulo": "Corrida de Argolinhas"
+  },
+  {
+    "slug": "quadrilha-dos-amigos",
+    "categoria": "eventos",
+    "titulo": "Quadrilha dos Amigos"
+  },
+  {
+    "slug": "campeonato-regional",
+    "categoria": "eventos",
+    "titulo": "Campeonato Regional de Futebol"
+  },
+  {
+    "slug": "campeonato-de-bairros",
+    "categoria": "eventos",
+    "titulo": "Campeonato de Bairros"
+  },
+  {
+    "slug": "encontro-dos-cachaceiros",
+    "categoria": "eventos",
+    "titulo": "Encontro dos Cachaceiros"
+  },
+  {
+    "slug": "salobro",
+    "categoria": "comunidades",
+    "titulo": "Salobro"
+  },
+  {
+    "slug": "agua-boa",
+    "categoria": "comunidades",
+    "titulo": "Água Boa"
+  },
+  {
+    "slug": "valo-fundo",
+    "categoria": "comunidades",
+    "titulo": "Valo Fundo"
+  },
+  {
+    "slug": "senhora-da-gloria",
+    "categoria": "comunidades",
+    "titulo": "Nossa Senhora da Glória"
+  },
+  {
+    "slug": "caquende",
+    "categoria": "comunidades",
+    "titulo": "Caquende"
+  },
+  {
+    "slug": "ma-fitness",
+    "categoria": "comercios",
+    "titulo": "MA Fitness"
+  },
+  {
+    "slug": "imperio-store",
+    "categoria": "comercios",
+    "titulo": "Império Store"
+  },
+  {
+    "slug": "deposito-pereira",
+    "categoria": "comercios",
+    "titulo": "Depósito Pereira"
+  },
+  {
+    "slug": "bar-da-nega",
+    "categoria": "comercios",
+    "titulo": "Bar da Nega"
+  },
+  {
+    "slug": "varejao-mg",
+    "categoria": "comercios",
+    "titulo": "Varejão MG"
+  },
+  {
+    "slug": "padaria-jr",
+    "categoria": "comercios",
+    "titulo": "Padaria e Lanchonete JR"
+  }
+]

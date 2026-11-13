@@ -1,0 +1,62 @@
+@layer sections {
+  /* ───── Página 404 (spec §7.4) ─────
+   * Fundo creme, header claro (data-header-theme="light"), anel de foco padrão (--gold-700).
+   * O "404" gigante é ajustado à largura pelo fx/fit-text e animado letra a letra por fx/split
+   * (por isso cor sólida: o split envolve cada letra e quebraria um degradê com background-clip).
+   */
+  .error-page {
+    position: relative;
+    display: grid;
+    align-content: center;
+    min-height: 100svh;
+    padding-block: calc(var(--header-h) + clamp(24px, 4vw, 56px)) clamp(48px, 6vw, 96px);
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 38%, rgb(227 167 47 / .16), transparent 70%),
+      linear-gradient(165deg, var(--cream-50) 0%, var(--cream-100) 45%, var(--cream-200) 100%);
+  }
+
+  .error-page__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    gap: clamp(12px, 2vw, 20px);
+    text-align: center;
+  }
+
+  /* O tamanho abaixo é só o de partida; fx/fit-text o ajusta a 92% da largura do container. */
+  .error-page__code {
+    width: max-content;
+    max-width: 100%;
+    padding-bottom: .04em;
+    color: var(--green-800);
+    font-size: clamp(6rem, 30vw, 22rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: .9;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .error-page__title {
+    font-size: var(--fs-h2);
+    overflow-wrap: anywhere;
+  }
+
+  .error-page__text {
+    max-width: 42ch;
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.55;
+  }
+
+  .error-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: clamp(4px, 1vw, 12px);
+  }
+}

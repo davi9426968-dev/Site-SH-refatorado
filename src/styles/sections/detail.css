@@ -1,0 +1,371 @@
+@layer sections {
+  /* ───── Página de lugar (spec §7.3) ───── */
+
+  /* Hero: capa em tela quase cheia, com parallax (fx/parallax amplia .page-hero__media e o hero
+   * corta o excesso), véu verde na base e texto creme. Anel de foco creme: sobre uma foto clara
+   * sob o véu, o ouro 500 fica abaixo de 3:1 (templates.test.mjs, CARRY dos Rulings 11/12). */
+  .page-hero {
+    --text: var(--cream-100);
+    --text-strong: var(--cream-100);
+    --text-muted: rgb(251 247 238 / .86);
+    --accent-text: var(--gold-500);
+    --border: rgb(251 247 238 / .26);
+    --hover-fill: var(--gold-500);
+    --hover-ink: var(--green-950);
+    --focus-ring: var(--cream-100);
+    position: relative;
+    display: grid;
+    align-content: end;
+    min-height: 88svh;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--green-950);
+    color: var(--text);
+  }
+
+  /* Véu: 80% de --green-950 na base, ainda 70% na metade de baixo, onde ficam trilha, título e chips. */
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to top,
+      color-mix(in srgb, var(--green-950) 80%, transparent) 0%,
+      color-mix(in srgb, var(--green-950) 70%, transparent) 50%,
+      color-mix(in srgb, var(--green-950) 25%, transparent) 82%,
+      color-mix(in srgb, var(--green-950) 10%, transparent) 100%);
+  }
+
+  /* Faixa de véu no topo: o header creme fica legível sobre céu e nuvens claros (ex.: Salobro). */
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: calc(var(--header-h) + 72px);
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+      color-mix(in srgb, var(--green-950) 62%, transparent) 0%,
+      transparent 100%);
+  }
+
+  .page-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+  }
+
+  .page-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-hero__content {
+    display: grid;
+    justify-items: start;
+    gap: 16px;
+    padding-top: calc(var(--header-h) + 48px);
+    padding-bottom: clamp(40px, 6vw, 88px);
+    text-shadow: 0 1px 18px rgb(10 34 25 / .45);
+  }
+
+  .page-hero__content .breadcrumb {
+    margin-bottom: 8px;
+  }
+
+  .page-hero__title {
+    max-width: 16ch;
+    font-size: var(--fs-display);
+    line-height: .96;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .page-hero .chip {
+    background: rgb(251 247 238 / .1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-shadow: none;
+  }
+
+  /* Sem fotos: hero tipográfico em verde, com a palavra gigante e a marca d'água do brasão. */
+  .page-hero--type {
+    --focus-ring: var(--gold-500);
+    background:
+      radial-gradient(ellipse 80% 60% at 85% 0%, rgb(227 167 47 / .18), transparent 70%),
+      radial-gradient(ellipse 70% 55% at 0% 100%, rgb(10 34 25 / .55), transparent 70%),
+      var(--green-800);
+  }
+
+  .page-hero--type::before {
+    background: url("/img/brand/brasao-512.png") no-repeat right -10vw bottom -12vw / min(80vw, 620px);
+    opacity: .07;
+  }
+
+  /* A palavra fica centrada no espaço entre o header e o bloco de texto da base. */
+  .page-hero__backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    display: grid;
+    place-items: center;
+    padding: var(--header-h) var(--edge) clamp(240px, 42svh, 400px);
+  }
+
+  /* fx/fit-text ajusta a fonte a 92% da largura; o tamanho abaixo é só o de partida. */
+  .page-hero__word {
+    width: max-content;
+    padding-bottom: .05em;
+    background: linear-gradient(180deg, rgb(242 207 126 / .45) 0%, rgb(251 247 238 / .05) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(4rem, 16vw, 15rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: .9;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  /* ───── Texto e ficha (12 colunas: texto 7, ficha 4 e fixa no desktop) ───── */
+  .detail-layout__text {
+    display: grid;
+    align-content: start;
+    gap: 24px;
+  }
+
+  .detail-layout .lead {
+    max-width: 30em;
+    color: var(--text-strong);
+    font-size: clamp(1.25rem, 2.1vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+  }
+
+  .detail-layout__text > p:not(.lead) {
+    max-width: 62ch;
+  }
+
+  .info-card .detail-layout__label {
+    margin-bottom: 20px;
+  }
+
+  .detail-layout__status:not(:empty) {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: var(--fs-small);
+  }
+
+  @media (min-width: 960px) {
+    .detail-layout__text {
+      grid-column: 1 / span 6;
+    }
+
+    .detail-layout__aside {
+      grid-column: 8 / -1;
+    }
+
+    .detail-layout__aside .info-card {
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .detail-layout__text {
+      grid-column: 1 / span 7;
+    }
+
+    .detail-layout__aside {
+      grid-column: 9 / -1;
+    }
+  }
+
+  /* ───── Galeria ───── */
+  .gallery-section__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px 24px;
+    margin-bottom: clamp(32px, 5vw, 56px);
+  }
+
+  .gallery-section__count {
+    color: var(--accent-text);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* Fim incompleto do ciclo de 6 do mosaico (components.css) sem buracos, no de 4 e no de 2 colunas.
+   * galleryCols (templates.mjs) espelha estas regras no sizes. */
+  /* Sobra uma: a larga do ciclo anterior vira simples e a última entra ao lado dela. */
+  .gallery-section .gallery__item:nth-child(6n):nth-last-child(2),
+  .gallery-section .gallery__item:nth-child(6n + 1):last-child {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery-section .gallery__item:nth-child(6n + 2):last-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery-section .gallery__item:nth-child(6n + 2):nth-last-child(2),
+  .gallery-section .gallery__item:nth-child(6n + 3):last-child {
+    grid-row: span 2;
+  }
+
+  .gallery-section .gallery__item:nth-child(6n + 4):last-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .gallery-section .gallery__item:nth-child(6n + 4):nth-last-child(2),
+  .gallery-section .gallery__item:nth-child(6n + 5):last-child {
+    grid-row: span 1;
+  }
+
+  /* Uma foto só: no tamanho dela (até 560 px), sem cortar nem ampliar. */
+  .gallery[data-count="1"] {
+    grid-template-columns: minmax(0, 560px);
+    grid-auto-rows: auto;
+  }
+
+  .gallery[data-count="1"] .gallery__item {
+    grid-row: auto;
+  }
+
+  .gallery[data-count="1"] .gallery__item img {
+    height: auto;
+  }
+
+  /* Sem fotos: o convite toma o lugar da galeria. */
+  .gallery-section__empty {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .gallery-section__icon {
+    width: 72px;
+    height: 72px;
+    padding: 22px;
+    border-radius: 50%;
+    background: var(--gold-500);
+    color: var(--green-950);
+    box-shadow: var(--glow-gold);
+  }
+
+  .gallery-section__title {
+    max-width: 18ch;
+  }
+
+  .gallery-section__text {
+    max-width: 44ch;
+    color: var(--text-muted);
+  }
+
+  .gallery-section__empty .btn {
+    margin-top: 8px;
+  }
+
+  /* ───── Continue explorando: 3 cards, anterior e próximo ───── */
+  .related__nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: clamp(48px, 7vw, 88px);
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .related__link {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2px 14px;
+    min-height: 44px;
+    color: var(--text-strong);
+    text-decoration: none;
+  }
+
+  .related__link--next {
+    grid-template-columns: minmax(0, 1fr) auto;
+    text-align: right;
+  }
+
+  .related__arrow {
+    grid-row: 1 / span 2;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    transition:
+      background-color .3s ease,
+      border-color .3s ease,
+      color .3s ease,
+      translate var(--dur-base) var(--ease-out);
+  }
+
+  .related__link--prev :is(.related__dir, .related__name) {
+    grid-column: 2;
+  }
+
+  .related__link--next :is(.related__dir, .related__name) {
+    grid-column: 1;
+  }
+
+  .related__link--next .related__arrow {
+    grid-column: 2;
+  }
+
+  .related__dir {
+    grid-row: 1;
+    color: var(--accent-text);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .related__name {
+    grid-row: 2;
+    font-size: clamp(1rem, 1.6vw, 1.375rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .related__link:hover .related__arrow {
+    border-color: var(--hover-fill);
+    background: var(--hover-fill);
+    color: var(--hover-ink);
+  }
+
+  .related__link--prev:hover .related__arrow {
+    translate: -4px 0;
+  }
+
+  .related__link--next:hover .related__arrow {
+    translate: 4px 0;
+  }
+}

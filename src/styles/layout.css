@@ -1,0 +1,520 @@
+@layer layout {
+  /* Contextos escuros: trocam os papéis de cor (tokens.css) para texto creme e ouro 500. */
+  .section--dark,
+  .site-footer,
+  .menu-mobile,
+  .card-type,
+  .lightbox {
+    --text: var(--cream-100);
+    --text-strong: var(--cream-100);
+    --text-muted: rgb(251 247 238 / .72);
+    --accent-text: var(--gold-500);
+    --border: rgb(251 247 238 / .16);
+    --hover-fill: var(--gold-500);
+    --hover-ink: var(--green-950);
+    color: var(--text);
+  }
+
+  /*
+   * Anel de foco em ouro 500 dentro das superfícies escuras. O .card-type fica de fora de propósito:
+   * ele é o próprio link, e o anel dele aparece no fundo claro em volta.
+   */
+  .section--dark,
+  .site-footer,
+  .menu-mobile,
+  .lightbox {
+    --focus-ring: var(--gold-500);
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: var(--edge);
+  }
+
+  .section {
+    position: relative;
+    padding-block: var(--section-y);
+  }
+
+  .section--dark {
+    background:
+      radial-gradient(ellipse 80% 55% at 75% 0%, rgb(227 167 47 / .12), transparent 70%),
+      var(--green-900);
+  }
+
+  .section--warm {
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 0%, rgb(227 167 47 / .10), transparent 70%),
+      linear-gradient(165deg, var(--cream-100) 0%, var(--cream-200) 45%, var(--green-100) 120%);
+    border-top: 1px solid var(--line);
+  }
+
+  /* Cabeçalho padrão de seção: etiqueta, título e texto de abertura. */
+  .section-header {
+    display: grid;
+    justify-items: start;
+    gap: 20px;
+    max-width: 48rem;
+    margin-bottom: clamp(40px, 6vw, 72px);
+  }
+
+  .section-header--center {
+    justify-items: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: var(--fs-h2);
+    line-height: .98;
+  }
+
+  .lead {
+    max-width: 34em;
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.6;
+  }
+
+  /* 12 colunas sempre (nada de colunas implícitas); no celular os filhos ocupam a linha toda. */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(32px, 4vw, 56px) clamp(12px, 2vw, 32px);
+  }
+
+  .grid-12 > * {
+    grid-column: 1 / -1;
+  }
+
+  /* ───── Header ─────
+   * O tema vem do ancestral mais próximo com data-header-theme (o <body> nas páginas;
+   * molduras no styleguide). over-dark: transparente, texto creme. light: texto verde.
+   * .is-scrolled: vidro creme nos dois. O brasão mantém as próprias cores sempre.
+   */
+  [data-header-theme="light"] {
+    --header-ink: var(--green-800);
+    --header-ink-muted: var(--ink-600);
+    --header-scrim: 0;
+    --header-focus: var(--gold-700);
+  }
+
+  [data-header-theme="over-dark"] {
+    --header-ink: var(--cream-100);
+    --header-ink-muted: rgb(251 247 238 / .78);
+    --header-scrim: 1;
+    /* Creme, e não ouro 500: o ouro dá só 2,7:1 sobre o tema Fé do hero. */
+    --header-focus: var(--cream-100);
+  }
+
+  .site-header {
+    --header-fg: var(--header-ink, var(--green-800));
+    --header-fg-muted: var(--header-ink-muted, var(--ink-600));
+    --focus-ring: var(--header-focus, var(--gold-700));
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 100;
+    padding-block: 16px;
+    border-bottom: 1px solid transparent;
+    color: var(--header-fg);
+    transition:
+      background-color .4s ease,
+      backdrop-filter .4s ease,
+      border-color .4s ease,
+      box-shadow .4s ease,
+      padding .4s var(--ease-out),
+      transform var(--dur-base) var(--ease-out);
+  }
+
+  /* Fixo só com JS: sem ui/header não há .is-scrolled, e o texto creme sumiria sobre o conteúdo claro. */
+  .js .site-header {
+    position: fixed;
+  }
+
+  /* Véu escuro atrás do header transparente, para o texto creme não sumir em fotos claras. */
+  .site-header::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 -32px;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgb(10 34 25 / .45), transparent);
+    opacity: var(--header-scrim, 0);
+    transition: opacity .4s ease;
+  }
+
+  /* O vidro muda de cor com o que passa atrás (até ~2,6:1 para o ouro 700 sobre o hero escuro): anel verde. */
+  .site-header.is-scrolled {
+    --header-fg: var(--green-800);
+    --header-fg-muted: var(--ink-600);
+    --focus-ring: var(--green-800);
+    padding-block: 8px;
+    border-bottom-color: var(--line);
+    background: rgb(251 247 238 / .78);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 36px rgb(18 63 46 / .07);
+  }
+
+  .site-header.is-scrolled::before {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header.is-hidden {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Com o menu mobile aberto, o header fica sobre o verde do menu. */
+  html.menu-open .site-header {
+    --header-fg: var(--cream-100);
+    --header-fg-muted: rgb(251 247 238 / .78);
+    --focus-ring: var(--gold-500);
+    border-bottom-color: transparent;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    transform: none;
+  }
+
+  html.menu-open .site-header::before {
+    opacity: 0;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 48px;
+  }
+
+  .site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    color: var(--header-fg);
+    text-decoration: none;
+  }
+
+  .site-header__crest {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+
+  .site-header__name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .site-header__sub {
+    color: var(--header-fg-muted);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .site-nav {
+    display: none;
+    align-items: center;
+    gap: clamp(16px, 2.4vw, 36px);
+  }
+
+  .site-nav__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--header-fg);
+    font-size: .8125rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .site-nav__link::after {
+    content: "";
+    position: absolute;
+    right: .14em;
+    bottom: 8px;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gold-500);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  .site-nav__link:hover::after,
+  .site-nav__link[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .site-header__toggle {
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid color-mix(in srgb, var(--header-fg) 28%, transparent);
+    border-radius: 50%;
+    color: var(--header-fg);
+    transition: background-color var(--dur-fast), border-color var(--dur-fast);
+  }
+
+  .site-header__toggle:hover {
+    background: color-mix(in srgb, var(--header-fg) 10%, transparent);
+  }
+
+  .site-header__toggle svg {
+    grid-area: 1 / 1;
+    width: 22px;
+    height: 22px;
+  }
+
+  .site-header__toggle[aria-expanded="true"] .site-header__icon--menu,
+  .site-header__toggle:not([aria-expanded="true"]) .site-header__icon--close {
+    display: none;
+  }
+
+  @media (min-width: 901px) {
+    .site-nav {
+      display: flex;
+    }
+
+    .site-header__toggle {
+      display: none;
+    }
+  }
+
+  /* ───── Menu mobile (≤ 900 px; o JS da Task 3 alterna o atributo hidden) ───── */
+  .menu-mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    padding: calc(var(--header-h) + 24px) var(--edge) 40px;
+    overflow: hidden auto;
+    overscroll-behavior: contain;
+    container-type: inline-size;
+    background:
+      radial-gradient(ellipse 90% 50% at 100% 0%, rgb(227 167 47 / .14), transparent 70%),
+      var(--green-900);
+    isolation: isolate;
+  }
+
+  /* Marca d'água do brasão. */
+  .menu-mobile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: url("/img/brand/brasao-512.png") no-repeat right -28cqi bottom -12cqi / min(110cqi, 640px);
+    opacity: .07;
+  }
+
+  .menu-mobile nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-mobile__link {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding-block: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: clamp(1.875rem, 8.5cqi, 3.5rem);
+    font-weight: 800;
+    letter-spacing: var(--tracking-title);
+    line-height: 1.05;
+    text-decoration: none;
+  }
+
+  .menu-mobile__link:hover,
+  .menu-mobile__link[aria-current="page"] {
+    color: var(--gold-500);
+  }
+
+  .menu-mobile__index {
+    flex: none;
+    min-width: 2.4em;
+    color: var(--gold-500);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .2em;
+  }
+
+  .menu-mobile__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (min-width: 901px) {
+    .menu-mobile {
+      display: none;
+    }
+  }
+
+  /* ───── Rodapé ───── */
+  .site-footer {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(72px, 10vw, 128px);
+    background:
+      radial-gradient(ellipse 70% 45% at 85% 0%, rgb(227 167 47 / .12), transparent 70%),
+      var(--green-950);
+    isolation: isolate;
+  }
+
+  .site-footer__top {
+    display: grid;
+    gap: 32px;
+    padding-bottom: clamp(40px, 6vw, 72px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-footer__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text);
+    text-decoration: none;
+    justify-self: start;
+  }
+
+  .site-footer__crest {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+  }
+
+  .site-footer__name {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 1.375rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .site-footer__name small {
+    color: var(--text-muted);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  .site-footer__tagline {
+    max-width: 18ch;
+    color: var(--text-strong);
+    font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 900px) {
+    .site-footer__top {
+      grid-template-columns: auto 1fr;
+      align-items: end;
+    }
+
+    .site-footer__tagline {
+      justify-self: end;
+      text-align: right;
+    }
+  }
+
+  .site-footer__cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 40px 32px;
+    padding-block: clamp(40px, 6vw, 72px);
+  }
+
+  .site-footer__col h2 {
+    margin-bottom: 12px;
+    color: var(--accent-text);
+    font-size: var(--fs-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .site-footer__col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-footer__col a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--dur-fast);
+  }
+
+  .site-footer__col a:hover {
+    color: var(--gold-500);
+  }
+
+  .site-footer__col svg {
+    width: 18px;
+    height: 18px;
+    color: var(--gold-500);
+  }
+
+  /* Nome gigante: fit-text (Task 4) ajusta o tamanho à largura; o valor abaixo é o de partida. */
+  .site-footer__wordmark {
+    width: max-content;
+    margin-inline: auto;
+    padding-bottom: .06em;
+    background: linear-gradient(180deg, var(--cream-100) 15%, rgb(242 207 126 / .28) 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(3rem, 13.5vw, 15rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1.05;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 24px 32px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: var(--fs-small);
+  }
+}

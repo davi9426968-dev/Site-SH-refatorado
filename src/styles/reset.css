@@ -1,0 +1,85 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body,
+  h1, h2, h3, h4, h5, h6,
+  p, figure, blockquote, dl, dd {
+    margin: 0;
+  }
+
+  ul[class],
+  ol[class] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  /* Ícone do sprite sem tamanho definido fica do tamanho da letra (o padrão seria 300×150). */
+  svg:not([width]) {
+    width: 1em;
+    height: 1em;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, li, dd {
+    overflow-wrap: break-word;
+  }
+
+  /* Componentes com display próprio não podem anular o atributo hidden (menu mobile, por exemplo). */
+  [hidden]:not([hidden="until-found"]) {
+    display: none !important;
+  }
+
+  /* Movimento reduzido: sem animações nem transições em CSS (os efeitos em JS se desligam sozinhos). */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

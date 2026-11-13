@@ -4,6 +4,8 @@ import { finePointer, onMotionChange, reducedMotion } from '../core/motion.js'
 import { fitFontSize } from './fit-text.js'
 
 export const AUTOPLAY_MS = 6000
+/** Quanto a foto de fundo desce (em % da própria altura) enquanto o hero sai da tela: 50 = metade da rolagem. */
+export const BACKDROP_DRIFT = 50
 const FIT_WIDTH = 0.92
 const HIDDEN_CLIP = 'inset(100% 0% 0% 0%)'
 const FULL_CLIP = 'inset(0% 0% 0% 0%)'
@@ -213,9 +215,17 @@ export function applyTheme(root, theme, { instant = false } = {}) {
   })
 }
 
-/** Entrada do hero: letras sobem, o arco cresce de .9, as órbitas chegam pelas laterais; header e barra por último. */
-function buildEntrance({ wordEl, arch, orbits, last }) {
+/**
+ * Entrada do hero: a foto de fundo aparece afastando o zoom, as letras sobem, o arco cresce de .9, as órbitas
+ * chegam pelas laterais; header e barra por último.
+ */
+function buildEntrance({ backdrop, wordEl, arch, orbits, last }) {
   const tl = gsap.timeline({ paused: true })
+  if (backdrop) {
+    tl.fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: 1.4, ease: 'power2.out' }, 0)
+    const img = $('img', backdrop)
+    if (img) tl.fromTo(img, { scale: 1.25 }, { scale: 1, duration: 2.6, ease: 'expo.out' }, 0)
+  }
   const chars = wordEl ? $$('.hero-themes__char', wordEl) : []
   if (chars.length) {
     tl.fromTo(chars, { y: 46, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.03, ease: 'back.out(1.6)' }, 0)
@@ -237,6 +247,7 @@ function buildEntrance({ wordEl, arch, orbits, last }) {
 export function bindHeroThemes(root) {
   const themes = readThemes(root)
   const tabs = $$('[data-theme]', root)
+  const backdrop = $('.hero-themes__backdrop', root)
   const wordEl = $('.hero-themes__word', root)
   const stage = $('.hero-themes__stage', root)
   const arch = $('.hero-themes__arch', root)
@@ -377,6 +388,25 @@ export function bindHeroThemes(root) {
     on(root, 'pointerleave', () => move(0, 0))
   }
 
+  // ───── Foto de fundo quase fixa: enquanto o hero sai da tela, ela desce metade do caminho ─────
+  if (backdrop) {
+    let drift = null
+    const setDrift = reduce => {
+      drift?.scrollTrigger?.kill()
+      drift?.kill()
+      drift = null
+      gsap.set(backdrop, { clearProps: 'transform' })
+      if (reduce) return
+      drift = gsap.to(backdrop, {
+        yPercent: BACKDROP_DRIFT,
+        ease: 'none',
+        scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true },
+      })
+    }
+    setDrift(reducedMotion())
+    cleanups.push(onMotionChange(setDrift), () => setDrift(true))
+  }
+
   // ───── Tamanho da palavra: refeito ao redimensionar e quando as fontes chegam (também com movimento reduzido) ─────
   let resizeTimer
   if (wordEl) {
@@ -390,7 +420,7 @@ export function bindHeroThemes(root) {
   // ───── Entrada: em sh:intro-done, ou logo de cara se não houver intro ─────
   // .is-ready desliga o estado oculto do CSS; daqui em diante quem esconde é o estado inicial da GSAP.
   root.classList.add('is-ready')
-  if (!reducedMotion()) entrance = buildEntrance({ wordEl, arch, orbits, last })
+  if (!reducedMotion()) entrance = buildEntrance({ backdrop, wordEl, arch, orbits, last })
   restart()
   const start = () => {
     entrance?.play()

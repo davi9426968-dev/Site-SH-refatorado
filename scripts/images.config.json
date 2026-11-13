@@ -797,6 +797,12 @@
       "role": "hero"
     },
     {
+      "src": "_legado/capa/santo hipolito.png",
+      "dest": "home/hero-fundo",
+      "alt": "Colagem com igreja de torre vermelha, ponte de ferro, casarão de varanda azul e cachoeira",
+      "role": "hero"
+    },
+    {
       "src": "_legado/valo fundo/rio valo.png",
       "dest": "home/og-default",
       "alt": "Rio de águas claras correndo entre pedras e mata, com morros ao fundo",

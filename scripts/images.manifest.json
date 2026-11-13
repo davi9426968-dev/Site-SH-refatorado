@@ -1173,6 +1173,21 @@
       "height": 800
     }
   },
+  "home/hero-fundo": {
+    "dest": "home/hero-fundo",
+    "alt": "Colagem com igreja de torre vermelha, ponte de ferro, casarão de varanda azul e cachoeira",
+    "role": "hero",
+    "large": {
+      "url": "/img/home/hero-fundo-1600.webp",
+      "width": 1092,
+      "height": 448
+    },
+    "small": {
+      "url": "/img/home/hero-fundo-800.webp",
+      "width": 800,
+      "height": 328
+    }
+  },
   "home/numeros-fundo": {
     "dest": "home/numeros-fundo",
     "alt": "Árvore frondosa em pasto verde ao lado de estrada de terra",

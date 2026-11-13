@@ -23,7 +23,7 @@ const TEMAS = ['natureza', 'rio', 'tradicao', 'fe']
 const HOME_HERO = [
   ...TEMAS.map((t) => `home/tema-${t}`),
   'home/cat-pontos-turisticos', 'home/cat-eventos', 'home/cat-comunidades', 'home/cat-comercios',
-  'home/cidade-matriz', 'home/numeros-fundo', 'home/og-default',
+  'home/cidade-matriz', 'home/numeros-fundo', 'home/og-default', 'home/hero-fundo',
 ]
 const HOME_ORBIT = TEMAS.flatMap((t) => [1, 2, 3, 4].map((n) => `home/orbita-${t}-${n}`))
 const HOME_OG = ['home/cat-pontos-turisticos', 'home/cat-eventos', 'home/cat-comunidades', 'home/cat-comercios', 'home/og-default']

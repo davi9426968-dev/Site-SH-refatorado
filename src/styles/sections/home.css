@@ -101,6 +101,37 @@
     pointer-events: none;
   }
 
+  /* Foto de fundo fixa (home/hero-fundo, a capa do site antigo): fica atrás da palavra e do palco e não
+   * troca com o tema. Ela é translúcida, então a cor do tema (e a onda, que passa por baixo) tinge a foto.
+   * O véu escurece o topo (header) e a base (barra): o creme mantém 4,5:1 mesmo sobre o céu e a água. */
+  .hero-themes__backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-themes__backdrop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--backdrop-x, 50%) 50%;
+    opacity: var(--backdrop-opacity, .55);
+  }
+
+  .hero-themes__backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgb(10 34 25 / .7) 0,
+      rgb(10 34 25 / .5) var(--header-h),
+      rgb(10 34 25 / 0) calc(var(--header-h) + 96px),
+      rgb(10 34 25 / 0) 45%,
+      rgb(10 34 25 / .5) 100%);
+  }
+
   /* Palavra e palco na mesma célula: a foto em arco fica por cima, no centro. */
   .hero-themes__scene {
     position: relative;
@@ -290,6 +321,17 @@
     padding-bottom: clamp(20px, 3vw, 40px);
   }
 
+  /* Véu próprio da barra, de ponta a ponta do hero (o overflow do hero corta as sobras): com a foto de fundo,
+   * abas, pausa e "Role" ficam sempre sobre um fundo escurecido, em qualquer altura que a barra caia. */
+  .hero-themes__bar::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -32px -100vw 0;
+    background: linear-gradient(180deg, rgb(10 34 25 / 0), rgb(10 34 25 / .45) 32px);
+    pointer-events: none;
+  }
+
   /* Os botões só fazem algo com JS. */
   .hero-themes__tabs {
     grid-area: tabs;
@@ -444,7 +486,7 @@
   /* Até o fx/hero-themes assumir (.is-ready), palavra, órbitas, barra e header ficam ocultos para a entrada
    * não piscar. Se o módulo não carregar, a animação hero-failsafe os mostra em 4 s (o boot também tira
    * motion-ok se o JS todo falhar). Com .is-ready a regra deixa de valer e a GSAP cuida do estado inicial. */
-  .motion-ok .hero-themes:not(.is-ready) :is(.hero-themes__word, .hero-themes__orbit, .hero-themes__bar),
+  .motion-ok .hero-themes:not(.is-ready) :is(.hero-themes__backdrop, .hero-themes__word, .hero-themes__orbit, .hero-themes__bar),
   .motion-ok:has(.hero-themes:not(.is-ready)) .site-header {
     opacity: 0;
     animation: hero-failsafe 0s 4s forwards;

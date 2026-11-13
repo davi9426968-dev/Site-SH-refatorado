@@ -116,6 +116,20 @@ describe('anel de foco', () => {
     expect(index).toMatch(/<section[^>]*class="[^"]*\bvideo-section\b[^"]*\bsection--dark\b/)
   })
 
+  // Foto de fundo do hero: no pior caso (pixel branco na foto translúcida sobre o tema mais claro), só o véu
+  // da barra já garante 4,5:1 para o creme das abas, da pausa e do "Role".
+  it('Home: o véu da barra do hero mantém o creme ≥ 4,5 sobre a foto de fundo, mesmo num pixel branco', () => {
+    const home = css('sections/home.css')
+    const opacity = Number(home.match(/\.hero-themes__backdrop-img\s*\{[^}]*opacity:\s*var\(--backdrop-opacity,\s*(\.\d+)\)/)?.[1])
+    const scrim = Number(home.match(/\.hero-themes__bar::before\s*\{[^}]*rgb\(10 34 25 \/ (\.\d+)\) 32px\)/)?.[1])
+    expect(opacity).toBeGreaterThan(0)
+    expect(scrim).toBeGreaterThan(0)
+    for (const theme of ['--theme-natureza', '--theme-rio', '--theme-tradicao', '--theme-fe']) {
+      const fundo = over(t['--green-950'], scrim, over('#FFFFFF', opacity, t[theme]))
+      expect([theme, contrastRatio(t['--cream-100'], fundo) >= 4.5]).toEqual([theme, true])
+    }
+  })
+
   it('o voltar ao topo (fixo sobre qualquer fundo) usa anel --gold-700 com halo --cream-100 (≥ 3 entre os dois)', () => {
     const components = css('components.css')
     expect(components).toMatch(/\.to-top\s*\{[^}]*--focus-ring:\s*var\(--gold-700\)/)

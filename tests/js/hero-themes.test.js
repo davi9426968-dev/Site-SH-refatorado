@@ -2,7 +2,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { applyTheme, bindHeroThemes, flankFontSize, init, nextIndex, readThemes } from '../../src/js/fx/hero-themes.js'
+import { applyTheme, BACKDROP_DRIFT, bindHeroThemes, flankFontSize, init, nextIndex, readThemes } from '../../src/js/fx/hero-themes.js'
 
 const read = f => readFileSync(resolve(process.cwd(), f), 'utf8')
 const index = read('index.html')
@@ -278,6 +278,47 @@ describe('hero de temas', () => {
   })
 })
 
+// Foto de fundo do hero (home/hero-fundo): fixa atrás da palavra e do palco, entra afastando o zoom.
+describe('hero de temas: foto de fundo', () => {
+  const backdrop = () => root.querySelector('.hero-themes__backdrop')
+  const drift = async () => {
+    const { ScrollTrigger } = await import('../../src/js/core/gsap.js')
+    return ScrollTrigger.getAll().filter(st => st.trigger === root && st.animation?.targets().includes(backdrop()))
+  }
+
+  it('com movimento, a entrada começa com a foto transparente e ampliada', () => {
+    api = bindHeroThemes(root)
+    expect(backdrop().style.opacity).toBe('0')
+    expect(root.querySelector('.hero-themes__backdrop-img').style.transform).toMatch(/scale\(1\.25/)
+  })
+
+  it('a troca de tema não mexe na foto de fundo', () => {
+    media({ reduce: true })
+    api = bindHeroThemes(root)
+    const src = root.querySelector('.hero-themes__backdrop-img').getAttribute('src')
+    api.select(2)
+    expect(root.querySelector('.hero-themes__backdrop-img').getAttribute('src')).toBe(src)
+  })
+
+  it('com movimento reduzido não há entrada nem deslocamento na rolagem', async () => {
+    media({ reduce: true })
+    api = bindHeroThemes(root)
+    expect(backdrop().style.opacity).toBe('')
+    expect(await drift()).toHaveLength(0)
+  })
+
+  it('com movimento, desce metade da rolagem enquanto o hero sai da tela (quase fixa); destroy desfaz', async () => {
+    api = bindHeroThemes(root)
+    const [st] = await drift()
+    expect(st).toBeDefined()
+    expect(st.vars).toMatchObject({ start: 'top top', end: 'bottom top', scrub: true })
+    expect(st.animation.vars.yPercent).toBe(BACKDROP_DRIFT)
+    api.destroy()
+    api = null
+    expect(await drift()).toHaveLength(0)
+  })
+})
+
 describe('index.html: hero, faixa, A cidade e vídeo', () => {
   const doc = parsed()
   const $ = s => doc.querySelector(s)
@@ -336,6 +377,22 @@ describe('index.html: hero, faixa, A cidade e vídeo', () => {
     expect(img.getAttribute('sizes')).toBe('min(78vw, 420px)')
   })
 
+  it('a foto de fundo vem do manifest, decorativa, atrás da cena e sem disputar a banda com a foto do LCP', () => {
+    const wrap = $('#inicio > .hero-themes__backdrop')
+    expect(wrap.getAttribute('aria-hidden')).toBe('true')
+    // Antes da cena (palavra e palco) no HTML: fica atrás deles.
+    const kids = [...$('#inicio').children]
+    expect(kids.indexOf(wrap)).toBeLessThan(kids.indexOf($('#inicio > .hero-themes__scene')))
+    const img = wrap.querySelector('img.hero-themes__backdrop-img')
+    const fundo = manifest['home/hero-fundo']
+    expect(img.getAttribute('src')).toBe(fundo.large.url)
+    expect([img.getAttribute('width'), img.getAttribute('height')]).toEqual([String(fundo.large.width), String(fundo.large.height)])
+    expect(img.getAttribute('alt')).toBe('')
+    expect(img.getAttribute('loading')).toBe('eager')
+    expect(img.getAttribute('fetchpriority')).toBe('low')
+    expect(img.getAttribute('decoding')).toBe('async')
+  })
+
   it('faixa do brasão com o texto da spec', () => {
     expect($('.brand-bar').textContent.replace(/\s+/g, ' ').trim())
       .toBe('Município da região Central de Minas Gerais, às margens do Rio das Velhas — emancipado em 1962.')
@@ -383,11 +440,11 @@ describe('home.css: estado antes do fx/hero-themes', () => {
     return at < 0 ? '' : css.slice(at, css.indexOf('}', at))
   }
 
-  it('antes do .is-ready ficam ocultos palavra, órbitas, barra e header, mas não o palco nem o arco', () => {
+  it('antes do .is-ready ficam ocultos foto de fundo, palavra, órbitas, barra e header, mas não o palco nem o arco', () => {
     const hidden = css.match(/[^}]*:not\(\.is-ready\)[^{]*\{[^}]*opacity:\s*0[^}]*\}/g) ?? []
     expect(hidden.length).toBeGreaterThan(0)
     const selectors = hidden.join(' ')
-    for (const s of ['__word', '__orbit', '__bar', '.site-header']) expect(selectors).toContain(s)
+    for (const s of ['__backdrop', '__word', '__orbit', '__bar', '.site-header']) expect(selectors).toContain(s)
     expect(selectors).not.toMatch(/__stage|__arch|__photo/)
   })
 
